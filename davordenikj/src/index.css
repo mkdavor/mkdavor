@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #f5f6f8;
+  --bg-strong: #eef1f5;
+  --tile: rgba(255, 255, 255, 0.88);
+  --tile-strong: #ffffff;
+  --line: #e6eaf0;
+  --accent: #0071e3;
+  --text-main: #101827;
+  --text-soft: #4a5667;
+  --font-main: 'Plus Jakarta Sans', 'Avenir Next', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 12% 0%, #e8eefc 0%, transparent 32%),
+    radial-gradient(circle at 96% 100%, #edf2ff 0%, transparent 30%),
+    linear-gradient(180deg, #f9fafb 0%, var(--bg-strong) 100%),
+    var(--bg);
+}
