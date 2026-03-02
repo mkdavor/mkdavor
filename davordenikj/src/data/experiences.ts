@@ -93,7 +93,7 @@ export const experiences: Experience[] = [
     summary:
       "Developed Windows mobile/UWP and ASP.NET MVC applications across healthcare and insurance.",
     website: "https://linkedin.com/company/musala-soft/",
-    websiteLabel: "linkedin.com/company/musala-soft",
+    websiteLabel: "linkedin.com/musala-soft",
     logo: assetUrl("musalaLogo.png"),
     details: [
       "Built Windows Mobile and UWP apps with C#, XAML, and MVVM architecture.",
