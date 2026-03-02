@@ -37,8 +37,9 @@ function App() {
                     key={link.label}
                     className="social-link"
                     href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
+                    target={link.openInNewTab === false ? undefined : "_blank"}
+                    rel={link.openInNewTab === false ? undefined : "noreferrer"}
+                    download={link.downloadFileName}
                   >
                     {link.iconUrl ? (
                       <img src={link.iconUrl} alt="" aria-hidden="true" />

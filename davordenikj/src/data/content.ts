@@ -17,17 +17,21 @@ export const socialLinks: SocialLink[] = [
     href: "https://linkedin.com/in/davordenikj",
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
+    openInNewTab: true,
   },
   {
     label: "GitHub",
     href: "https://github.com/mkdavor",
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    openInNewTab: true,
   },
   {
     label: "CV",
-    href: "https://rxresu.me/mkdavor/davor-denikj",
+    href: assetUrl("Davor-Denikj-CV-English.pdf"),
     usesDocumentIcon: true,
+    downloadFileName: "Davor-Denikj-CV-English.pdf",
+    openInNewTab: false,
   },
 ];
 

@@ -31,6 +31,8 @@ export type SocialLink = {
   href: string;
   iconUrl?: string;
   usesDocumentIcon?: boolean;
+  downloadFileName?: string;
+  openInNewTab?: boolean;
 };
 
 export type Project = {

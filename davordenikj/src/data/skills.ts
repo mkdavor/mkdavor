@@ -28,7 +28,7 @@ export const skills: Skill[] = [
     alt: "Clean Architecture",
   },
   {
-    name: "REST APIs",
+    name: "API & SDK Architecture",
     icon: assetUrl("api.png"),
     alt: "API",
   },

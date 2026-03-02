@@ -197,7 +197,7 @@
   object-fit: contain;
   background: var(--tile-strong);
   border: 1px solid var(--line);
-  padding: 0.25rem;
+  /* padding: 0.25rem; */
   flex-shrink: 0;
 }
 
