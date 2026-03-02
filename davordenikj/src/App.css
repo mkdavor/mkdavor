@@ -270,7 +270,7 @@
   height: 72px;
   border-radius: 1.1rem;
   object-fit: contain;
-  padding: 0.2rem;
+  /* padding: 0.2rem; */
   border: 1px solid var(--line);
   background: var(--tile-strong);
   box-shadow: 0 6px 14px rgba(17, 24, 39, 0.08);
