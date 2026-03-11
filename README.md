@@ -1,16 +1,31 @@
-## Hi there 👋
+# Davor Denikj
 
-<!--
-**mkdavor/mkdavor** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Lead Software Engineer focused on scalable backend and mobile systems.
 
-Here are some ideas to get you started:
+## Portfolio Website
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Live: [https://davordenikj.com](https://davordenikj.com)
+- Source: `./davordenikj`
+- Stack: Next.js, React, TypeScript, CSS
+
+## Local Development
+
+```bash
+cd davordenikj
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+cd davordenikj
+npm run build
+npm run start
+```
+
+## Notes
+
+- Search-engine friendly static prerendering is enabled.
+- Sitemap: `https://davordenikj.com/sitemap.xml`
+- Robots: `https://davordenikj.com/robots.txt`

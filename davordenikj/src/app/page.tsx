@@ -1,12 +1,19 @@
+"use client";
+
 import { useState } from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import { educationItems, githubActivity, profile, projects, socialLinks } from "./data/content";
-import { experiences } from "./data/experiences";
-import { languages } from "./data/languages";
-import { skills } from "./data/skills";
-import "./App.css";
+import {
+  educationItems,
+  githubActivity,
+  profile,
+  projects,
+  socialLinks,
+} from "../data/content";
+import { experiences } from "../data/experiences";
+import { languages } from "../data/languages";
+import { skills } from "../data/skills";
 
-function App() {
+export default function HomePage() {
   const [activeExperienceId, setActiveExperienceId] = useState<string | null>(
     null,
   );
@@ -72,7 +79,7 @@ function App() {
                 <div className="experience-head-text">
                   <h3>{experience.company}</h3>
                   <p className="meta">
-                    {experience.role} · {experience.location} ·{" "}
+                    {experience.role} · {experience.location} · {" "}
                     {experience.period}
                   </p>
                 </div>
@@ -209,7 +216,7 @@ function App() {
                   {activeExperience.websiteLabel}
                 </a>
                 <p className="meta">
-                  {activeExperience.role} · {activeExperience.location} ·{" "}
+                  {activeExperience.role} · {activeExperience.location} · {" "}
                   {activeExperience.period}
                 </p>
               </div>
@@ -240,5 +247,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
