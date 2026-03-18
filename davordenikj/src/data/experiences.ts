@@ -53,7 +53,7 @@ export const experiences: Experience[] = [
     company: "Mathema",
     role: "Senior Software Engineer",
     location: "Nürnberg",
-    period: "07/2019 - 06/2021",
+    period: "02/2019 - 06/2021",
     summary:
       "Built enterprise C#/.NET systems and improved quality through test adoption.",
     website: "https://mathema.de",
