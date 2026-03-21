@@ -105,7 +105,7 @@ export const experiences: Experience[] = [
     id: "in2",
     company: "IN2",
     role: "Software Engineer",
-    location: "Skopje / Nuremberg",
+    location: "Skopje",
     period: "01/2015 - 04/2016",
     summary:
       "Implemented healthcare-focused WPF enterprise systems and reporting/data layers.",
