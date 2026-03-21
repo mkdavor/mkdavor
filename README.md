@@ -38,7 +38,7 @@ Digital business card platform (B2C + B2B)
   <img src="https://raw.githubusercontent.com/mkdavor/mkdavor/main/assets/mkliveradio.png" width="120"/>
 </a>
 
-Mobile app streaming 40+ Macedonian radio stations
+Mobile app streaming 80+ Macedonian radio stations
 
 - iOS + Android
 - Firebase Analytics + AdMob
