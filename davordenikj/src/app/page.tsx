@@ -112,34 +112,44 @@ export default function HomePage() {
           </div>
         </article>
 
-        <article className="tile tile-projects">
-          <h2>Hobby Projects</h2>
-          {projects.map((project) => (
-            <div key={project.id} className="project-item">
+        {projects.map((project, index) => (
+          <article
+            key={project.id}
+            className={`tile tile-project tile-project-${index + 1}`}
+          >
+            <h2>{project.name}</h2>
+            <div className="project-item">
               <img src={project.logo} alt={project.logoAlt} loading="lazy" />
               <div>
-                <p>
-                  <strong>{project.name}:</strong> {project.description}
-                </p>
+                <p>{project.description}</p>
                 <a href={project.website} target="_blank" rel="noreferrer">
                   {project.websiteLabel}
                 </a>
               </div>
             </div>
-          ))}
-        </article>
+          </article>
+        ))}
 
-        <article className="tile tile-education">
-          <h2>Education</h2>
-          {educationItems.map((item) => (
-            <div key={item.id} className="education-item">
-              <h3>{item.title}</h3>
-              <p>{item.institution}</p>
-              <a href={item.website} target="_blank" rel="noreferrer">
-                {item.websiteLabel}
-              </a>
-            </div>
-          ))}
+        <article className="tile tile-github">
+          <h2>GitHub Activity</h2>
+          {!githubWidgetFailed ? (
+            <img
+              className="github-widget"
+              src={githubActivity.chartUrl}
+              alt={githubActivity.chartAlt}
+              loading="lazy"
+              onError={() => setGithubWidgetFailed(true)}
+            />
+          ) : (
+            <a
+              className="github-fallback-link"
+              href={githubActivity.fallbackUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {githubActivity.fallbackLabel}
+            </a>
+          )}
         </article>
 
         <article className="tile tile-languages">
@@ -162,26 +172,17 @@ export default function HomePage() {
           </ul>
         </article>
 
-        <article className="tile tile-github">
-          <h2>GitHub Activity</h2>
-          {!githubWidgetFailed ? (
-            <img
-              className="github-widget"
-              src={githubActivity.chartUrl}
-              alt={githubActivity.chartAlt}
-              loading="lazy"
-              onError={() => setGithubWidgetFailed(true)}
-            />
-          ) : (
-            <a
-              className="github-fallback-link"
-              href={githubActivity.fallbackUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {githubActivity.fallbackLabel}
-            </a>
-          )}
+        <article className="tile tile-education">
+          <h2>Education</h2>
+          {educationItems.map((item) => (
+            <div key={item.id} className="education-item">
+              <h3>{item.title}</h3>
+              <p>{item.institution}</p>
+              <a href={item.website} target="_blank" rel="noreferrer">
+                {item.websiteLabel}
+              </a>
+            </div>
+          ))}
         </article>
       </section>
 

@@ -6,9 +6,9 @@ export const profile = {
   avatarAlt: "Davor Denikj",
   role: "Lead Software Engineer",
   name: "Davor Denikj",
-  subtitle: ".NET, Swift, Mobile & Backend Architecture",
+  subtitle: ".NET, Swift, Mobile, Backend and Cloud Systems",
   summary:
-    "Lead Software Engineer with 12+ years of experience in backend and mobile development, specializing in .NET and Swift. Architect of scalable mobile and backend systems, with proven experience leading cross-functional teams and delivering production-grade applications from concept to release. Strong focus on clean architecture, long-term maintainability, and aligning technical execution with business objectives.",
+    "I'm a Lead Software Engineer specializing in .NET, Swift, and cloud-native systems. For more than 12 years I've been designing and building backend platforms and mobile applications while leading engineering teams and defining software architecture. I believe great software is built by strong teams, where collaboration, knowledge sharing, and continuous learning are just as important as technical excellence. I enjoy turning complex technical challenges into simple, scalable solutions that are built to last.",
 };
 
 export const socialLinks: SocialLink[] = [
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     id: "tomato-cards",
     name: "Tomato Cards",
     description:
-      "Digital business card SaaS platform focused on scalable backend architecture and modern web technologies.",
+      "Digital business card SaaS platform focused on scalable cloud architecture and modern web technologies.",
     website: "https://tomatocards.com",
     websiteLabel: "tomatocards.com",
     logo: assetUrl("tomatoCardsLogo.svg"),
@@ -66,14 +66,6 @@ export const educationItems: EducationItem[] = [
       "Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University of Skopje",
     website: "https://www.finki.ukim.mk/en",
     websiteLabel: "finki.ukim.mk",
-  },
-  {
-    id: "feit",
-    title: "Electrical Engineering and Information Technologies",
-    institution:
-      "Faculty of Electrical Engineering and Information Technologies, UKIM Skopje",
-    website: "https://feit.ukim.edu.mk/en/",
-    websiteLabel: "feit.ukim.edu.mk",
   },
 ];
 
