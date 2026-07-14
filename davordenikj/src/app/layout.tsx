@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { profile, socialLinks } from "../data/content";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
 import {
   SITE_DESCRIPTION,
   SITE_KEYWORDS,
@@ -18,9 +19,6 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
-  alternates: {
-    canonical: "/",
-  },
   keywords: SITE_KEYWORDS,
   category: "technology",
   authors: [{ name: "Davor Denikj", url: SITE_URL }],
@@ -30,7 +28,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -48,10 +45,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/me.png",
-        width: 400,
-        height: 400,
-        alt: "Davor Denikj profile photo",
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Davor Denikj - Lead Software Engineer",
       },
     ],
   },
@@ -60,7 +57,7 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     creator: "@mkdavor",
-    images: ["/me.png"],
+    images: ["/opengraph-image"],
   },
   manifest: "/manifest.webmanifest",
   icons: {
@@ -79,51 +76,19 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0071e3",
+  themeColor: "#ff6347",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
-  const personJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.name,
-    jobTitle: profile.role,
-    description: profile.summary,
-    image: `${SITE_URL}${profile.avatar}`,
-    url: SITE_URL,
-    sameAs: socialLinks
-      .filter((link) => link.openInNewTab !== false)
-      .map((link) => link.href),
-  };
-
-  const webSiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_NAME,
-    url: SITE_URL,
-    description: SITE_DESCRIPTION,
-    publisher: {
-      "@type": "Person",
-      name: profile.name,
-    },
-  };
-
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
-        />
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

@@ -4,6 +4,11 @@ export type Skill = {
   alt: string;
 };
 
+export type SkillGroup = {
+  name: string;
+  items: string[];
+};
+
 export type Language = {
   name: string;
   level: string;
@@ -21,6 +26,7 @@ export type Experience = {
   website: string;
   websiteLabel: string;
   details: string[];
+  technologies: string[];
   intro?: string;
   detailsHeading?: string;
   logo?: string;
@@ -37,8 +43,17 @@ export type SocialLink = {
 
 export type Project = {
   id: string;
+  slug: string;
   name: string;
+  tagline: string;
   description: string;
+  role: string;
+  status: string;
+  purpose: string;
+  differentiators: string[];
+  features: string[];
+  architecture: string[];
+  technologies: string[];
   website: string;
   websiteLabel: string;
   logo: string;

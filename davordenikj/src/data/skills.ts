@@ -1,60 +1,81 @@
 import { assetUrl } from "./assetUrl";
-import type { Skill } from "./types";
+import type { Skill, SkillGroup } from "./types";
 
 export const skills: Skill[] = [
   {
-    name: ".NET / C#",
+    name: ".NET",
     icon: assetUrl("dotnet.svg"),
     alt: ".NET",
   },
   {
-    name: "Xamarin / MAUI",
-    icon: assetUrl("mauiLogo.svg"),
-    alt: "MAUI / Xamarin",
-  },
-  {
-    name: "Swift / SwiftUI",
+    name: "Swift",
     icon: assetUrl("swift.svg"),
     alt: "Swift",
   },
   {
-    name: "Mobile Architecture",
-    icon: assetUrl("mobileArchLogo.png"),
-    alt: "Mobile",
-  },
-  {
-    name: "Clean Architecture",
-    icon: assetUrl("clean-architecture.svg"),
-    alt: "Clean Architecture",
-  },
-  {
-    name: "API & SDK Architecture",
-    icon: assetUrl("api.png"),
-    alt: "API",
-  },
-  {
-    name: "Docker & Kubernetes",
+    name: "Docker",
     icon: assetUrl("docker.svg"),
     alt: "Docker",
   },
   {
-    name: "Azure DevOps / CI-CD",
+    name: "Azure DevOps",
     icon: assetUrl("azuredevops-original.svg"),
     alt: "Azure DevOps",
   },
   {
-    name: "Bluetooth (BLE)",
+    name: "Bluetooth LE",
     icon: assetUrl("bluetooth.svg"),
-    alt: "Bluetooth",
+    alt: "Bluetooth LE",
   },
   {
-    name: "SQL Server / Postgres",
+    name: "PostgreSQL",
     icon: assetUrl("postgres.svg"),
     alt: "PostgreSQL",
   },
   {
-    name: "IAM · Keycloak · ZITADEL",
+    name: "Keycloak",
     icon: assetUrl("keycloak.svg"),
-    alt: "Identity and access management",
+    alt: "Keycloak",
+  },
+];
+
+export const skillGroups: SkillGroup[] = [
+  {
+    name: "Backend",
+    items: ["C#", ".NET", "ASP.NET Core", "REST APIs", "Entity Framework"],
+  },
+  {
+    name: "Mobile",
+    items: ["Swift", "SwiftUI", "iOS", ".NET MAUI", "Xamarin", "Bluetooth LE"],
+  },
+  {
+    name: "Cloud & DevOps",
+    items: [
+      "Docker",
+      "Kubernetes",
+      "Azure DevOps",
+      "GitHub Actions",
+      "CI/CD",
+      "OpenTelemetry",
+    ],
+  },
+  {
+    name: "Frontend",
+    items: ["React", "TypeScript", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    name: "Data & identity",
+    items: ["PostgreSQL", "SQL Server", "Keycloak", "ZITADEL"],
+  },
+  {
+    name: "Architecture & practices",
+    items: [
+      "Clean Architecture",
+      "SOLID Principles",
+      "API & SDK Design",
+      "TDD",
+      "Observability",
+      "Technical Leadership",
+    ],
   },
 ];

@@ -5,10 +5,10 @@ export const SITE_URL = (rawSiteUrl || "https://davordenikj.com").replace(
   "",
 );
 
-export const SITE_NAME = "Davor Denikj Portfolio";
-export const SITE_TITLE = "Davor Denikj | Lead Software Engineer";
+export const SITE_NAME = "Davor Denikj";
+export const SITE_TITLE = "Davor Denikj - Lead Software Engineer | .NET, Swift & Cloud";
 export const SITE_DESCRIPTION =
-  "Lead Software Engineer with 12+ years of experience in .NET, Swift, mobile architecture, backend systems, DevOps, and scalable product delivery.";
+  "Lead Software Engineer in Nuremberg with 12+ years of experience in .NET, Swift, mobile, backend, cloud systems, and hands-on technical leadership.";
 
 export const SITE_KEYWORDS = [
   "Davor Denikj",
