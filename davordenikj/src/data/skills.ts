@@ -52,4 +52,9 @@ export const skills: Skill[] = [
     icon: assetUrl("postgres.svg"),
     alt: "PostgreSQL",
   },
+  {
+    name: "IAM · Keycloak · ZITADEL",
+    icon: assetUrl("keycloak.svg"),
+    alt: "Identity and access management",
+  },
 ];
