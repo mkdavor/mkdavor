@@ -24,7 +24,7 @@ Digital business card platform (B2C + B2B)
 
 ![.NET](https://img.shields.io/badge/.NET-10-purple)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Self--Hosted-blue)
-![Auth](https://img.shields.io/badge/IAM-Keycloak/Zitadel-green)
+![Auth](https://img.shields.io/badge/IAM-Zitadel-green)
 ![Cloud](https://img.shields.io/badge/Cloud-Cloudflare_R2-orange)
 ![Hosting](https://img.shields.io/badge/Hosting-Hetzner-red)
 
