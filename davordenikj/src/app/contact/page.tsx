@@ -10,12 +10,15 @@ import { ContactForm } from "../../components/ContactForm";
 import { profile } from "../../data/content";
 
 const description =
-  "Contact Davor Denikj about suitable remote or hybrid Lead Software Engineer, Tech Lead, .NET, mobile, backend, or cloud opportunities.";
+  "Contact Davor Denikj about suitable on-site opportunities within commuting distance of Nuremberg, as well as hybrid or remote Lead Software Engineer and Tech Lead roles.";
 
 export const metadata: Metadata = {
   title: "Contact",
   description,
-  alternates: { canonical: "/contact" },
+  alternates: {
+    canonical: "/contact",
+    languages: { en: "/contact", de: "/de/contact", "x-default": "/contact" },
+  },
   openGraph: {
     url: "/contact",
     title: "Contact Davor Denikj",
@@ -38,8 +41,9 @@ export default function ContactPage() {
           <p className="eyebrow">Contact</p>
           <h1>Let&apos;s build something that lasts.</h1>
           <p className="detail-lead">
-            I&apos;m open to suitable remote and hybrid opportunities where hands-on engineering,
-            technical direction, and reliable product delivery matter.
+            I&apos;m open to suitable on-site opportunities within reasonable commuting distance of
+            Nuremberg, as well as hybrid and remote roles where hands-on engineering, technical
+            direction, and reliable product delivery matter.
           </p>
         </article>
 
@@ -63,7 +67,7 @@ export default function ContactPage() {
           <h2>{profile.location}</h2>
           <div className="location-status">
             <i aria-hidden="true" />
-            <span>Open to suitable remote and hybrid roles</span>
+            <span>Open to on-site roles within commuting distance, plus hybrid and remote roles</span>
           </div>
           <div className="location-focus">
             <p>Role focus</p>

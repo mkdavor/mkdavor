@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import type { ReactNode } from "react";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -79,12 +80,15 @@ export const viewport: Viewport = {
   themeColor: "#ff6347",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const pathname = (await headers()).get("x-site-pathname") || "/";
+  const isGerman = pathname === "/de" || pathname.startsWith("/de/");
+
   return (
-    <html lang="en">
+    <html lang={isGerman ? "de" : "en"}>
       <body>
         <a className="skip-link" href="#main-content">
-          Skip to main content
+          {isGerman ? "Zum Hauptinhalt springen" : "Skip to main content"}
         </a>
         <SiteHeader />
         {children}

@@ -6,9 +6,11 @@ import type { Project } from "../data/types";
 type ProjectCardProps = {
   project: Project;
   className?: string;
+  locale?: "en" | "de";
 };
 
-export function ProjectCard({ project, className = "" }: ProjectCardProps) {
+export function ProjectCard({ project, className = "", locale = "en" }: ProjectCardProps) {
+  const isGerman = locale === "de";
   return (
     <article className={`tile project-card ${className}`.trim()}>
       <div className="project-card-header">
@@ -31,13 +33,13 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <div className="tag-list" aria-label={`${project.name} technologies`}>
+      <div className="tag-list" aria-label={`${project.name} ${isGerman ? "Technologien" : "technologies"}`}>
         {project.technologies.slice(0, 4).map((technology) => (
           <span key={technology}>{technology}</span>
         ))}
       </div>
-      <Link className="text-link" href={`/projects/${project.slug}`}>
-        View project <IoArrowForward aria-hidden="true" />
+      <Link className="text-link" href={`${isGerman ? "/de" : ""}/projects/${project.slug}`}>
+        {isGerman ? "Projekt ansehen" : "View project"} <IoArrowForward aria-hidden="true" />
       </Link>
     </article>
   );

@@ -1,0 +1,131 @@
+import { assetUrl } from "./assetUrl";
+import type { Experience } from "./types";
+
+export const experiencesDe: Experience[] = [
+  {
+    id: "lmz",
+    company: "Landesmedienzentrum Baden-Württemberg",
+    role: "Lead Software Engineer (Teamgröße: 4)",
+    location: "Stuttgart",
+    period: "07/2024 – heute",
+    summary:
+      "Verantworte den gesamten Produktlebenszyklus für iOS-, iPadOS-, Mobile- und Backend-Systeme – von der Architektur bis zu Release und Betrieb.",
+    website: "https://lmz-bw.de",
+    websiteLabel: "lmz-bw.de",
+    logo: assetUrl("lmzLogo.png"),
+    details: [
+      "Verantwortung für den gesamten Produktlebenszyklus von iOS- und iPadOS-Anwendungen – vom Architekturentwurf bis zur Veröffentlichung im App Store.",
+      "Definition der technischen Strategie und Architektur für Mobile- und Backend-Systeme mit Blick auf Skalierbarkeit und langfristige Wartbarkeit.",
+      "Führung und Mentoring des Entwicklungsteams, Festlegung von Coding-Standards, Durchführung von Reviews und Etablierung bewährter Entwicklungspraktiken.",
+      "Konzeption und Umsetzung sicherer Backend-Dienste und REST-APIs für mobile Anwendungen und Webanwendungen.",
+      "Aufbau und Betreuung von CI/CD-Pipelines und containerisierter Infrastruktur mit Docker, Kubernetes und Azure DevOps.",
+      "Koordination zwischen Produkt-, Design- und Infrastrukturteams zur Abstimmung der technischen Umsetzung mit strategischen Zielen.",
+      "Konzeption und Umsetzung sicherer Authentifizierungs- und Autorisierungslösungen mit Keycloak, OAuth 2.0, OpenID Connect, rollenbasierter Zugriffskontrolle und Single Sign-on.",
+      "Etablierung von Observability mit OpenTelemetry, zentralem Logging, Distributed Tracing und Metriken.",
+    ],
+    technologies: [
+      ".NET 10", "C#", "ASP.NET Core", "EF Core", "Swift", "SwiftUI", "React",
+      "REST APIs", "Docker", "Kubernetes", "Azure DevOps", "OpenTelemetry",
+    ],
+    intro:
+      "In meiner aktuellen Rolle beim LMZ BW verantworte ich den gesamten Produktentwicklungszyklus von der Idee bis zur Auslieferung. Dabei übernehme ich die End-to-End-Verantwortung für Architektur, Umsetzung, Infrastruktur und Release-Management, steuere die Produktrichtung, koordiniere Teams und sichere die technische Qualität über den gesamten Stack hinweg.",
+    detailsHeading: "Wesentliche Verantwortlichkeiten und Erfolge:",
+  },
+  {
+    id: "wsa",
+    company: "WS Audiology",
+    role: "Lead Software Engineer für mobile Anwendungen (Teamgröße: 5)",
+    location: "Erlangen",
+    period: "07/2021 – 06/2024",
+    summary:
+      "Leitete Architektur und Auslieferung mobiler SDKs mit .NET, Swift und Bluetooth Low Energy für produktive Medizinsoftware.",
+    website: "https://wsa.com",
+    websiteLabel: "wsa.com",
+    logo: assetUrl("wsaLogo.png"),
+    details: [
+      "Leitung von Architektur und Entwicklung eines Swift-basierten SDKs; Verkürzung der Wiederverbindungszeit von Hörgeräten durch optimierte BLE-Logik von etwa 20 Sekunden auf unter eine Sekunde.",
+      "Modernisierung des Xamarin-SDKs und Leitung der Migration zu .NET MAUI zur Verbesserung von Performance und plattformübergreifender Wartbarkeit.",
+      "Definition von Standards für mobile Architekturen und Sicherstellung der Anforderungen an Medizinproduktsoftware.",
+      "Durchführung technischer Interviews und Bewertung von Senior-Kandidaten.",
+      "Zusammenarbeit mit internationalen, funktionsübergreifenden Teams aus iOS-, Android- und Backend-Bereichen.",
+      "Entwicklung von Prototypen für Innovationsinitiativen, darunter Apple Vision Pro und Live-Übersetzungsanwendungen.",
+      "Mentoring von Junior- und Senior-Entwicklern sowie technische Beratung und Architektur-Reviews.",
+    ],
+    technologies: ["Xamarin", ".NET MAUI", "C#", "Swift", "SwiftUI", "Bluetooth Low Energy", "Mobile SDK development", "TDD"],
+  },
+  {
+    id: "mathema",
+    company: "Mathema",
+    role: "Senior Software Engineer",
+    location: "Nürnberg",
+    period: "02/2019 – 06/2021",
+    summary:
+      "Entwicklung unternehmenskritischer C#/.NET-Systeme und Verbesserung der Qualität durch Einführung automatisierter Tests.",
+    website: "https://mathema.de",
+    websiteLabel: "mathema.de",
+    logo: assetUrl("mathemaLogo.svg"),
+    details: [
+      "Erweiterung und Betreuung von Unternehmensanwendungen für Personal- und Produktionsmanagement.",
+      "Entwicklung von C#/.NET-MVC-Anwendungen mit SQL Server und Stored Procedures.",
+      "Einführung von Unit-Tests zur Verbesserung von Stabilität und Codequalität.",
+      "Überführung fachlicher Anforderungen in skalierbare technische Lösungen.",
+    ],
+    technologies: [".NET", "C#", "ASP.NET MVC", "SQL Server", "Stored Procedures", "Data Warehousing", "ETL", "Unit Testing"],
+  },
+  {
+    id: "endava",
+    company: "Endava",
+    role: "Senior Software Engineer",
+    location: "Skopje",
+    period: "10/2017 – 01/2019",
+    summary:
+      "Umsetzung umfangreicher C#-Integrationen für die Versicherungsbranche mit konsequentem TDD und hoher Automatisierung.",
+    website: "https://endava.com",
+    websiteLabel: "endava.com",
+    logo: assetUrl("endavaLogo.png"),
+    details: [
+      "Umsetzung großer Systemintegrationen für eine britische Versicherungsgruppe mit C# und TDD.",
+      "Direkte Zusammenarbeit mit Kundenvertretern zu Architektur und Lieferstatus.",
+      "Verbesserung automatisierter Testabläufe und Unterstützung jüngerer Entwickler.",
+      "Mitwirkung an Integrations- und Automatisierungstests für zuverlässige Produktivsysteme.",
+    ],
+    technologies: [".NET", "C#", "TDD", "System Integration", "Integration Testing", "Test Automation"],
+  },
+  {
+    id: "musala",
+    company: "Musala Soft (übernommen von Avenga)",
+    role: "Software Engineer",
+    location: "Skopje",
+    period: "04/2016 – 10/2017",
+    summary:
+      "Entwicklung von Windows-Mobile-/UWP- und ASP.NET-MVC-Anwendungen für Gesundheitswesen und Versicherungen.",
+    website: "https://linkedin.com/company/musala-soft/",
+    websiteLabel: "linkedin.com/musala-soft",
+    logo: assetUrl("musalaLogo.png"),
+    details: [
+      "Entwicklung von Windows-Mobile- und UWP-Apps mit C#, XAML und MVVM-Architektur.",
+      "Entwicklung von ASP.NET-MVC-Webanwendungen mit HTML5, CSS3 und JavaScript.",
+      "Umsetzung von Lösungen für Gesundheitswesen und Versicherungen mit Fokus auf Stabilität und Performance.",
+    ],
+    technologies: ["C#", "XAML", "UWP", "MVVM", "ASP.NET MVC", "HTML5", "CSS3", "JavaScript", "jQuery"],
+  },
+  {
+    id: "in2",
+    company: "IN2",
+    role: "Software Engineer",
+    location: "Skopje",
+    period: "01/2015 – 04/2016",
+    summary:
+      "Umsetzung von WPF-Unternehmenssystemen für das Gesundheitswesen sowie zugehöriger Reporting- und Datenschichten.",
+    website: "https://in2.eu/en/home-en/",
+    websiteLabel: "in2.eu",
+    logo: assetUrl("in2Logo.png"),
+    details: [
+      "Entwicklung von WPF-Unternehmensanwendungen für das Gesundheitswesen.",
+      "Konzeption von SQL-Server-Datenbankstrukturen und Stored Procedures.",
+      "Umsetzung von Reporting-Lösungen mit Crystal Reports sowie XML-/XSL-Transformationen.",
+      "Unterstützung interner Schulungs- und Bankintegrationslösungen.",
+    ],
+    technologies: [".NET", "C#", "WPF", "DevExpress", "SQL Server", "Crystal Reports", "XML/XSLT", "System Integration"],
+  },
+];

@@ -8,7 +8,7 @@ export const profile = {
   name: "Davor Denikj",
   subtitle: ".NET, Swift, Mobile, Backend and Cloud Systems",
   location: "Nuremberg, Germany",
-  availability: "Open to suitable remote and hybrid opportunities",
+  availability: "Open to suitable on-site, hybrid, and remote opportunities",
   shortSummary:
     "I design and deliver production software across backend, mobile, cloud, and DevOps - while leading the teams that build it.",
   summary:

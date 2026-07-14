@@ -8,78 +8,88 @@ import {
   IoLogoLinkedin,
   IoMailOutline,
 } from "react-icons/io5";
-import { educationItems, profile, projects } from "../../data/content";
-import { experiences } from "../../data/experiences";
-import { languages } from "../../data/languages";
-import { skillGroups } from "../../data/skills";
+import { educationItemsDe, profileDe, projectsDe } from "../../../data/content.de";
+import { experiencesDe } from "../../../data/experiences.de";
+import { languagesDe } from "../../../data/languages.de";
+import { skillGroups } from "../../../data/skills";
 
 const description =
-  "Accessible HTML CV for Davor Denikj, Lead Software Engineer specializing in .NET, Swift, mobile, backend, cloud systems, and technical leadership.";
+  "Barrierearmer HTML-Lebenslauf von Davor Denikj, Lead Software Engineer für .NET, Swift, Mobile-, Backend- und Cloud-Systeme sowie technische Führung.";
+
+const skillGroupNames: Record<string, string> = {
+  Backend: "Backend",
+  Mobile: "Mobile",
+  "Cloud & DevOps": "Cloud & DevOps",
+  Frontend: "Frontend",
+  "Data & identity": "Daten & Identität",
+  "Architecture & practices": "Architektur & Methoden",
+};
 
 export const metadata: Metadata = {
-  title: "CV - Lead Software Engineer",
+  title: "Lebenslauf – Lead Software Engineer",
   description,
   alternates: {
-    canonical: "/cv",
+    canonical: "/de/cv",
     languages: { en: "/cv", de: "/de/cv", "x-default": "/cv" },
   },
   openGraph: {
-    url: "/cv",
-    title: "Davor Denikj - Lead Software Engineer CV",
+    url: "/de/cv",
+    title: "Davor Denikj – Lebenslauf als Lead Software Engineer",
     description,
+    locale: "de_DE",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Davor Denikj - Lead Software Engineer CV",
+    title: "Davor Denikj – Lebenslauf als Lead Software Engineer",
     description,
     images: ["/opengraph-image"],
   },
 };
 
-export default function CvPage() {
+export default function GermanCvPage() {
   return (
     <main id="main-content" className="page cv-page">
       <header className="cv-header tile">
-        <Image src={profile.avatar} alt={profile.avatarAlt} width={104} height={104} priority />
+        <Image src={profileDe.avatar} alt={profileDe.avatarAlt} width={104} height={104} priority />
         <div className="cv-heading">
-          <p className="eyebrow">Curriculum vitae</p>
-          <h1>{profile.name}</h1>
-          <p className="detail-lead">Lead Software Engineer | .NET & Swift | Mobile, Backend & Cloud Systems</p>
+          <p className="eyebrow">Lebenslauf</p>
+          <h1>{profileDe.name}</h1>
+          <p className="detail-lead">Lead Software Engineer | .NET & Swift | Mobile-, Backend- & Cloud-Systeme</p>
         </div>
         <div className="cv-actions no-print">
           <a className="button button-primary" href="/Davor-Denikj-CV-English.pdf" download>
-            <IoDocumentTextOutline aria-hidden="true" /> Download PDF
+            <IoDocumentTextOutline aria-hidden="true" /> Englisches PDF herunterladen
           </a>
-          <span>Use your browser&apos;s print command for a clean printed copy.</span>
+          <span>Mit der Druckfunktion Ihres Browsers erhalten Sie eine übersichtliche Druckversion auf Deutsch.</span>
         </div>
       </header>
 
       <div className="cv-layout">
-        <aside className="cv-sidebar" aria-label="Profile details">
+        <aside className="cv-sidebar" aria-label="Profildetails">
           <section>
-            <h2>Contact</h2>
+            <h2>Kontakt</h2>
             <ul className="icon-list">
-              <li><IoMailOutline aria-hidden="true" /><Link href="/contact">Contact form</Link></li>
-              <li><IoLocationOutline aria-hidden="true" /><span>{profile.location}</span></li>
+              <li><IoMailOutline aria-hidden="true" /><Link href="/de/contact">Kontaktformular</Link></li>
+              <li><IoLocationOutline aria-hidden="true" /><span>{profileDe.location}</span></li>
               <li><IoLogoLinkedin aria-hidden="true" /><a href="https://linkedin.com/in/davordenikj">LinkedIn</a></li>
               <li><IoLogoGithub aria-hidden="true" /><a href="https://github.com/mkdavor">GitHub</a></li>
             </ul>
           </section>
 
           <section>
-            <h2>Core expertise</h2>
+            <h2>Kernkompetenzen</h2>
             {skillGroups.map((group) => (
               <div key={group.name} className="cv-skill-group">
-                <h3>{group.name}</h3>
+                <h3>{skillGroupNames[group.name]}</h3>
                 <p>{group.items.join(" · ")}</p>
               </div>
             ))}
           </section>
 
           <section>
-            <h2>Education</h2>
-            {educationItems.map((item) => (
+            <h2>Ausbildung</h2>
+            {educationItemsDe.map((item) => (
               <div key={item.id}>
                 <h3>{item.title}</h3>
                 <p>{item.institution}</p>
@@ -88,9 +98,9 @@ export default function CvPage() {
           </section>
 
           <section>
-            <h2>Languages</h2>
+            <h2>Sprachen</h2>
             <ul className="cv-language-list">
-              {languages.map((language) => (
+              {languagesDe.map((language) => (
                 <li key={language.name}><span>{language.name}</span><strong>{language.level}</strong></li>
               ))}
             </ul>
@@ -99,13 +109,13 @@ export default function CvPage() {
 
         <div className="cv-main">
           <section className="cv-section cv-summary">
-            <h2>Profile</h2>
-            <p>{profile.summary}</p>
+            <h2>Profil</h2>
+            <p>{profileDe.summary}</p>
           </section>
 
           <section id="experience" className="cv-section">
-            <h2>Experience</h2>
-            {experiences.map((experience) => (
+            <h2>Berufserfahrung</h2>
+            {experiencesDe.map((experience) => (
               <article key={experience.id} className="cv-experience">
                 <header>
                   <div>
@@ -117,19 +127,19 @@ export default function CvPage() {
                 <ul>
                   {experience.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
-                <p className="cv-tech"><strong>Tech:</strong> {experience.technologies.join(", ")}</p>
+                <p className="cv-tech"><strong>Technologien:</strong> {experience.technologies.join(", ")}</p>
               </article>
             ))}
           </section>
 
           <section className="cv-section">
-            <h2>Independent projects</h2>
-            {projects.map((project) => (
+            <h2>Eigene Projekte</h2>
+            {projectsDe.map((project) => (
               <article key={project.id} className="cv-project">
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
-                <p><strong>Role:</strong> {project.role} · <strong>Status:</strong> {project.status}</p>
-                <Link href={`/projects/${project.slug}`}>Project details</Link>
+                <p><strong>Rolle:</strong> {project.role} · <strong>Status:</strong> {project.status}</p>
+                <Link href={`/de/projects/${project.slug}`}>Projektdetails</Link>
               </article>
             ))}
           </section>

@@ -123,6 +123,55 @@ summary {
   list-style: none;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+  padding-left: 0.45rem;
+  border-left: 1px solid var(--line);
+  color: var(--text-faint);
+}
+
+.site-header .language-switch a {
+  position: relative;
+  min-height: 2.25rem;
+  padding: 0.35rem;
+}
+
+.site-header .language-switch a[aria-current="page"] {
+  background: transparent;
+  box-shadow: none;
+}
+
+.site-header .language-switch a[aria-current="page"]::after {
+  position: absolute;
+  right: 0.35rem;
+  bottom: 0.12rem;
+  left: 0.35rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+}
+
+.language-switch-flag {
+  display: block;
+  width: 1.65rem;
+  height: 1.05rem;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 0.18rem;
+  object-fit: cover;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
 .site-header nav a {
   display: inline-flex;
   align-items: center;
@@ -254,7 +303,7 @@ summary {
 
 .hero-facts {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.65rem 1.1rem;
   margin-top: 0.9rem;
   color: var(--text-soft);
@@ -269,17 +318,30 @@ summary {
 }
 
 .hero-facts svg {
+  flex: 0 0 1rem;
   width: 1rem;
   height: 1rem;
   color: var(--accent);
 }
 
 .availability i {
+  position: relative;
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.availability i::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 0.55rem;
   height: 0.55rem;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background: #26a269;
   box-shadow: 0 0 0 4px rgba(38, 162, 105, 0.12);
+  content: "";
 }
 
 .button-row,
@@ -1580,6 +1642,16 @@ summary {
     scrollbar-width: none;
   }
 
+  .header-actions {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+
+  .language-switch {
+    border-left: 0;
+    padding-left: 0;
+  }
+
   .site-header nav a {
     min-height: 2.75rem;
     white-space: nowrap;
@@ -1617,10 +1689,6 @@ summary {
 
   .tile-hero h1 {
     font-size: clamp(2.35rem, 15vw, 3.4rem);
-  }
-
-  .hero-facts {
-    flex-direction: column;
   }
 
   .button-row .button {

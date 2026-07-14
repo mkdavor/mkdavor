@@ -32,6 +32,7 @@ export async function POST(request: Request) {
 
     const formData = await request.formData();
     const website = asTrimmedString(formData.get("website"));
+    const isGerman = asTrimmedString(formData.get("locale")) === "de";
 
     // Silently accept bot submissions that fill the hidden honeypot field.
     if (website) {
@@ -45,25 +46,25 @@ export async function POST(request: Request) {
 
     if (name.length < 2 || name.length > 100) {
       return NextResponse.json(
-        { error: "Enter a name between 2 and 100 characters." },
+        { error: isGerman ? "Geben Sie einen Namen mit 2 bis 100 Zeichen ein." : "Enter a name between 2 and 100 characters." },
         { status: 400 },
       );
     }
 
     if (email.length > 254 || !EMAIL_PATTERN.test(email)) {
-      return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+      return NextResponse.json({ error: isGerman ? "Geben Sie eine gültige E-Mail-Adresse ein." : "Enter a valid email address." }, { status: 400 });
     }
 
     if (company.length > 120) {
       return NextResponse.json(
-        { error: "Company must be 120 characters or fewer." },
+        { error: isGerman ? "Der Unternehmensname darf höchstens 120 Zeichen lang sein." : "Company must be 120 characters or fewer." },
         { status: 400 },
       );
     }
 
     if (message.length < 10 || message.length > 5_000) {
       return NextResponse.json(
-        { error: "Enter a message between 10 and 5,000 characters." },
+        { error: isGerman ? "Geben Sie eine Nachricht mit 10 bis 5.000 Zeichen ein." : "Enter a message between 10 and 5,000 characters." },
         { status: 400 },
       );
     }

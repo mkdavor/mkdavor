@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { IoClose, IoOpenOutline } from "react-icons/io5";
 import { experiences } from "../data/experiences";
+import type { Experience } from "../data/types";
 
 function openExperience(id: string) {
   const dialog = document.getElementById(`experience-dialog-${id}`);
@@ -14,10 +15,17 @@ function closeExperience(id: string) {
   if (dialog instanceof HTMLDialogElement) dialog.close();
 }
 
-export function ExperienceList() {
+type ExperienceListProps = {
+  items?: Experience[];
+  locale?: "en" | "de";
+};
+
+export function ExperienceList({ items = experiences, locale = "en" }: ExperienceListProps) {
+  const isGerman = locale === "de";
+
   return (
     <div className="experience-list">
-      {experiences.map((experience) => (
+      {items.map((experience) => (
         <article key={experience.id} className="experience-item">
           <div className="experience-head">
             {experience.logo && (
@@ -46,7 +54,7 @@ export function ExperienceList() {
             type="button"
             onClick={() => openExperience(experience.id)}
           >
-            Responsibilities and achievements
+            {isGerman ? "Verantwortlichkeiten und Erfolge" : "Responsibilities and achievements"}
           </button>
 
           <dialog
@@ -81,7 +89,7 @@ export function ExperienceList() {
                 <button
                   className="experience-dialog-close"
                   type="button"
-                  aria-label={`Close ${experience.company} details`}
+                  aria-label={isGerman ? `Details zu ${experience.company} schließen` : `Close ${experience.company} details`}
                   onClick={() => closeExperience(experience.id)}
                 >
                   <IoClose aria-hidden="true" />
@@ -101,7 +109,7 @@ export function ExperienceList() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Visit {experience.websiteLabel} <IoOpenOutline aria-hidden="true" />
+                {isGerman ? "Website öffnen" : "Visit"} {experience.websiteLabel} <IoOpenOutline aria-hidden="true" />
               </a>
             </div>
           </dialog>

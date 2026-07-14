@@ -14,14 +14,23 @@ const initialStatus: SubmitStatus = {
   message: "Your email address is only used to reply to your message.",
 };
 
-export function ContactForm() {
-  const [status, setStatus] = useState<SubmitStatus>(initialStatus);
+type ContactFormProps = {
+  locale?: "en" | "de";
+};
+
+export function ContactForm({ locale = "en" }: ContactFormProps) {
+  const isGerman = locale === "de";
+  const [status, setStatus] = useState<SubmitStatus>(
+    isGerman
+      ? { type: "idle", message: "Ihre E-Mail-Adresse wird ausschließlich zur Beantwortung Ihrer Nachricht verwendet." }
+      : initialStatus,
+  );
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
 
-    setStatus({ type: "submitting", message: "Sending your message…" });
+    setStatus({ type: "submitting", message: isGerman ? "Ihre Nachricht wird gesendet…" : "Sending your message…" });
 
     try {
       const response = await fetch("/api/contact", {
@@ -31,41 +40,42 @@ export function ContactForm() {
       const payload = (await response.json().catch(() => null)) as { error?: string } | null;
 
       if (!response.ok) {
-        throw new Error(payload?.error || "The message could not be sent.");
+        throw new Error(payload?.error || (isGerman ? "Die Nachricht konnte nicht gesendet werden." : "The message could not be sent."));
       }
 
       form.reset();
       setStatus({
         type: "success",
-        message: "Message sent successfully. Thank you — I’ll get back to you soon.",
+        message: isGerman ? "Nachricht erfolgreich gesendet. Vielen Dank – ich melde mich zeitnah bei Ihnen." : "Message sent successfully. Thank you — I’ll get back to you soon.",
       });
     } catch (error) {
       setStatus({
         type: "error",
-        message: error instanceof Error ? error.message : "The message could not be sent.",
+        message: error instanceof Error ? error.message : (isGerman ? "Die Nachricht konnte nicht gesendet werden." : "The message could not be sent."),
       });
     }
   }
 
   return (
     <form className="tile contact-form-card" onSubmit={handleSubmit}>
-      <p className="section-kicker">Contact form</p>
-      <h2>Start a conversation</h2>
+      <p className="section-kicker">{isGerman ? "Kontaktformular" : "Contact form"}</p>
+      <h2>{isGerman ? "Kontakt aufnehmen" : "Start a conversation"}</h2>
+      <input name="locale" type="hidden" value={locale} />
       <div className="contact-form-grid">
         <label>
-          <span>Name</span>
+          <span>{isGerman ? "Name" : "Name"}</span>
           <input name="name" type="text" autoComplete="name" required />
         </label>
         <label>
-          <span>Email</span>
+          <span>{isGerman ? "E-Mail" : "Email"}</span>
           <input name="email" type="email" autoComplete="email" required />
         </label>
         <label className="contact-form-full">
-          <span>Company <small>(optional)</small></span>
+          <span>{isGerman ? "Unternehmen" : "Company"} <small>({isGerman ? "optional" : "optional"})</small></span>
           <input name="company" type="text" autoComplete="organization" />
         </label>
         <label className="contact-form-full">
-          <span>Message</span>
+          <span>{isGerman ? "Nachricht" : "Message"}</span>
           <textarea name="message" rows={6} minLength={10} maxLength={5000} required />
         </label>
         <div className="contact-honeypot" aria-hidden="true">
@@ -82,7 +92,7 @@ export function ContactForm() {
           aria-describedby="contact-form-note"
           disabled={status.type === "submitting"}
         >
-          {status.type === "submitting" ? "Sending…" : "Send message"}
+          {status.type === "submitting" ? (isGerman ? "Wird gesendet…" : "Sending…") : (isGerman ? "Nachricht senden" : "Send message")}
           {status.type !== "submitting" && <IoArrowForward aria-hidden="true" />}
         </button>
         <p
