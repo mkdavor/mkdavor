@@ -130,6 +130,10 @@ summary {
   min-width: 0;
 }
 
+.mobile-menu-toggle {
+  display: none;
+}
+
 .language-switch {
   display: flex;
   align-items: center;
@@ -1632,29 +1636,101 @@ summary {
   }
 
   .site-header-inner {
-    align-items: flex-start;
+    position: relative;
+    align-items: center;
     padding: 0.65rem;
   }
 
-  .site-header nav {
-    max-width: calc(100vw - 5rem);
-    overflow-x: auto;
-    scrollbar-width: none;
+  .mobile-menu-toggle {
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.75rem;
+    color: var(--text);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle:hover {
+    background: var(--accent-soft);
+  }
+
+  .mobile-menu-toggle span {
+    width: 1.35rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(0.4rem) rotate(45deg);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-0.4rem) rotate(-45deg);
   }
 
   .header-actions {
-    align-items: flex-end;
-    flex-direction: column-reverse;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    left: 0;
+    z-index: 20;
+    visibility: hidden;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.65rem;
+    border: 1px solid rgba(223, 229, 236, 0.95);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+    backdrop-filter: blur(18px);
+  }
+
+  .header-actions.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-header ul {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.15rem;
   }
 
   .language-switch {
-    border-left: 0;
+    justify-content: center;
+    padding-top: 0.5rem;
     padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .site-header .language-switch a {
+    width: auto;
   }
 
   .site-header nav a {
+    width: 100%;
     min-height: 2.75rem;
-    white-space: nowrap;
   }
 
   .page {

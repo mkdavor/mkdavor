@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const englishNavigation = [
   { label: "Home", href: "/" },
@@ -27,10 +28,22 @@ function withoutGermanPrefix(pathname: string) {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isGerman = pathname === "/de" || pathname.startsWith("/de/");
   const navigation = isGerman ? germanNavigation : englishNavigation;
   const englishPath = withoutGermanPrefix(pathname);
   const germanPath = englishPath === "/" ? "/de" : `/de${englishPath}`;
+
+  useEffect(() => {
+    function closeMenuOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", closeMenuOnEscape);
+    return () => document.removeEventListener("keydown", closeMenuOnEscape);
+  }, []);
 
   function changeLanguage(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
     event.preventDefault();
@@ -47,12 +60,37 @@ export function SiteHeader() {
         >
           Davor Denikj<span aria-hidden="true">.</span>
         </Link>
-        <div className="header-actions">
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-expanded={isMenuOpen}
+          aria-controls="site-navigation"
+          aria-label={
+            isMenuOpen
+              ? isGerman
+                ? "Menü schließen"
+                : "Close menu"
+              : isGerman
+                ? "Menü öffnen"
+                : "Open menu"
+          }
+          onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
+        <div
+          className={`header-actions${isMenuOpen ? " is-open" : ""}`}
+          id="site-navigation"
+        >
           <nav aria-label={isGerman ? "Hauptnavigation" : "Primary navigation"}>
             <ul>
               {navigation.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={item.href} onClick={() => setIsMenuOpen(false)}>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
