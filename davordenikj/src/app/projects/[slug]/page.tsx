@@ -61,9 +61,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     url: canonicalUrl,
     sameAs: project.website,
     description: project.description,
-    applicationCategory:
-      project.id === "mklive-radio" ? "MultimediaApplication" : "BusinessApplication",
-    operatingSystem: project.id === "mklive-radio" ? "iOS, Android" : "Web",
+    applicationCategory: project.applicationCategory,
+    operatingSystem: project.operatingSystem,
     featureList: project.features,
     author: {
       "@type": "Person",
@@ -87,6 +86,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <article className="tile detail-hero">
           <div className="project-detail-title">
             <Image
+              className={project.logoRounded ? "project-logo-rounded" : undefined}
               src={project.logo}
               alt={project.logoAlt}
               width={112}
@@ -115,7 +115,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <dl>
             <div><dt>My role</dt><dd>{project.role}</dd></div>
             <div><dt>Status</dt><dd>{project.status}</dd></div>
-            <div><dt>Product</dt><dd>{project.id === "mklive-radio" ? "Native mobile app" : "B2C and B2B SaaS"}</dd></div>
+            <div><dt>Product</dt><dd>{project.productType}</dd></div>
           </dl>
         </article>
 
@@ -154,11 +154,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <nav className="next-project" aria-label="Project navigation">
-        {projects.filter((item) => item.id !== project.id).map((item) => (
-          <Link key={item.id} className="text-link" href={`/projects/${item.slug}`}>
-            Next project: {item.name} <IoArrowForward aria-hidden="true" />
-          </Link>
-        ))}
+        {(() => {
+          const currentIndex = projects.findIndex((item) => item.id === project.id);
+          const nextProject = projects[(currentIndex + 1) % projects.length];
+          return (
+            <Link className="text-link" href={`/projects/${nextProject.slug}`}>
+              Next project: {nextProject.name} <IoArrowForward aria-hidden="true" />
+            </Link>
+          );
+        })()}
       </nav>
     </main>
   );

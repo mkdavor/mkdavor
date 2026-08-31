@@ -54,10 +54,14 @@ export type Project = {
   features: string[];
   architecture: string[];
   technologies: string[];
+  productType: string;
+  applicationCategory: string;
+  operatingSystem: string;
   website: string;
   websiteLabel: string;
   logo: string;
   logoAlt: string;
+  logoRounded?: boolean;
 };
 
 export type EducationItem = {

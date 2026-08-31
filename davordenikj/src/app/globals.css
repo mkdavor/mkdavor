@@ -857,7 +857,7 @@ summary {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
   gap: 1rem;
 }
 
@@ -877,6 +877,10 @@ summary {
   width: 88px;
   height: 88px;
   object-fit: contain;
+}
+
+.project-logo-rounded {
+  border-radius: 22%;
 }
 
 .project-card-header h3 {

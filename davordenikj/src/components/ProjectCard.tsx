@@ -15,6 +15,7 @@ export function ProjectCard({ project, className = "", locale = "en" }: ProjectC
     <article className={`tile project-card ${className}`.trim()}>
       <div className="project-card-header">
         <Image
+          className={project.logoRounded ? "project-logo-rounded" : undefined}
           src={project.logo}
           alt={project.logoAlt}
           width={88}

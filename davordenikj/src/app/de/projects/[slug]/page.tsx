@@ -62,8 +62,8 @@ export default async function GermanProjectPage({ params }: ProjectPageProps) {
     sameAs: project.website,
     description: project.description,
     inLanguage: "de",
-    applicationCategory: project.id === "mklive-radio" ? "MultimediaApplication" : "BusinessApplication",
-    operatingSystem: project.id === "mklive-radio" ? "iOS, Android" : "Web",
+    applicationCategory: project.applicationCategory,
+    operatingSystem: project.operatingSystem,
     featureList: project.features,
     author: { "@type": "Person", name: profileDe.name, url: SITE_URL },
   };
@@ -82,7 +82,15 @@ export default async function GermanProjectPage({ params }: ProjectPageProps) {
       <section className="detail-grid project-detail-grid">
         <article className="tile detail-hero">
           <div className="project-detail-title">
-            <Image src={project.logo} alt={project.logoAlt} width={112} height={112} sizes="112px" priority />
+            <Image
+              className={project.logoRounded ? "project-logo-rounded" : undefined}
+              src={project.logo}
+              alt={project.logoAlt}
+              width={112}
+              height={112}
+              sizes="112px"
+              priority
+            />
             <div>
               <p className="eyebrow">{project.status}</p>
               <h1>{project.name}</h1>
@@ -104,7 +112,7 @@ export default async function GermanProjectPage({ params }: ProjectPageProps) {
           <dl>
             <div><dt>Meine Rolle</dt><dd>{project.role}</dd></div>
             <div><dt>Status</dt><dd>{project.status}</dd></div>
-            <div><dt>Produkt</dt><dd>{project.id === "mklive-radio" ? "Native mobile App" : "B2C- und B2B-SaaS"}</dd></div>
+            <div><dt>Produkt</dt><dd>{project.productType}</dd></div>
           </dl>
         </article>
 
@@ -137,11 +145,15 @@ export default async function GermanProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <nav className="next-project" aria-label="Projektnavigation">
-        {projectsDe.filter((item) => item.id !== project.id).map((item) => (
-          <Link key={item.id} className="text-link" href={`/de/projects/${item.slug}`}>
-            Nächstes Projekt: {item.name} <IoArrowForward aria-hidden="true" />
-          </Link>
-        ))}
+        {(() => {
+          const currentIndex = projectsDe.findIndex((item) => item.id === project.id);
+          const nextProject = projectsDe[(currentIndex + 1) % projectsDe.length];
+          return (
+            <Link className="text-link" href={`/de/projects/${nextProject.slug}`}>
+              Nächstes Projekt: {nextProject.name} <IoArrowForward aria-hidden="true" />
+            </Link>
+          );
+        })()}
       </nav>
     </main>
   );
