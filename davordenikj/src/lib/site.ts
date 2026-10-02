@@ -6,13 +6,13 @@ export const SITE_URL = (rawSiteUrl || "https://davordenikj.com").replace(
 );
 
 export const SITE_NAME = "Davor Denikj";
-export const SITE_TITLE = "Davor Denikj - Lead Software Engineer | .NET, Swift & Cloud";
+export const SITE_TITLE = "Davor Denikj - Staff Software Engineer | .NET, Swift & Cloud";
 export const SITE_DESCRIPTION =
-  "Lead Software Engineer in Nuremberg with 12+ years of experience in .NET, Swift, mobile, backend, cloud systems, and hands-on technical leadership.";
+  "Staff Software Engineer at Xempus, based in Nuremberg. Building AI solutions for insurance through forward-deployed engineering, backed by 12+ years in software.";
 
 export const SITE_KEYWORDS = [
   "Davor Denikj",
-  "Lead Software Engineer",
+  "Staff Software Engineer",
   ".NET",
   "C#",
   "Swift",

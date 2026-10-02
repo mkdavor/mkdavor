@@ -4,15 +4,15 @@ import type { EducationItem, Project, SocialLink } from "./types";
 export const profile = {
   avatar: assetUrl("me.png"),
   avatarAlt: "Davor Denikj",
-  role: "Lead Software Engineer",
+  role: "Staff Software Engineer",
   name: "Davor Denikj",
   subtitle: ".NET, Swift, Mobile, Backend and Cloud Systems",
   location: "Nuremberg, Germany",
   availability: "Open to suitable on-site, hybrid, and remote opportunities",
   shortSummary:
-    "I design and deliver production software across backend, mobile, cloud, and DevOps - while leading the teams that build it.",
+    "I build and deploy AI solutions for insurance at Xempus, combining technical leadership with forward-deployed engineering alongside customers.",
   summary:
-    "Lead Software Engineer with 12+ years of experience designing, architecting, and delivering backend and mobile applications using .NET and Swift. Proven experience leading engineering teams and building scalable production systems from concept to release, with a strong focus on clean architecture, long-term maintainability, and business-driven technical decisions.",
+    "Staff Software Engineer at Xempus, building AI solutions for insurance through forward-deployed engineering alongside customers. I bring 12+ years of experience designing, architecting, and delivering backend and mobile applications using .NET and Swift. Proven experience leading engineering teams and building scalable production systems from concept to release, with a strong focus on clean architecture, long-term maintainability, and business-driven technical decisions.",
 };
 
 export const careerHighlights = [

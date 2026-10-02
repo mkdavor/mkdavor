@@ -3,18 +3,34 @@ import type { Experience } from "./types";
 
 export const experiencesDe: Experience[] = [
   {
+    id: "xempus",
+    company: "Xempus",
+    role: "Staff Software Engineer",
+    location: "München",
+    period: "08/2026 - heute",
+    summary:
+      "Entwicklung und Bereitstellung von KI-Lösungen für die Versicherungsbranche, mit technischer Führung auf Staff-Level und praxisnahem Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden.",
+    website: "https://www.xempus.ai",
+    websiteLabel: "xempus.ai",
+    logo: assetUrl("xempusLogo.svg"),
+    details: [
+      "Entwicklung und Bereitstellung von KI-Lösungen für die Versicherungsbranche, mit technischer Führung auf Staff-Level und praxisnahem Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden.",
+    ],
+    technologies: [],
+  },
+  {
     id: "lmz",
     company: "Landesmedienzentrum Baden-Württemberg",
     role: "Lead Software Engineer (Teamgröße: 4)",
     location: "Stuttgart",
-    period: "07/2024 – heute",
+    period: "07/2024 - 08/2026",
     summary:
-      "Verantworte den gesamten Produktlebenszyklus für iOS-, iPadOS-, Mobile- und Backend-Systeme – von der Architektur bis zu Release und Betrieb.",
+      "Verantwortete den gesamten Produktlebenszyklus für iOS-, iPadOS-, Mobile- und Backend-Systeme - von der Architektur bis zu Release und Betrieb.",
     website: "https://lmz-bw.de",
     websiteLabel: "lmz-bw.de",
     logo: assetUrl("lmzLogo.png"),
     details: [
-      "Verantwortung für den gesamten Produktlebenszyklus von iOS- und iPadOS-Anwendungen – vom Architekturentwurf bis zur Veröffentlichung im App Store.",
+      "Verantwortung für den gesamten Produktlebenszyklus von iOS- und iPadOS-Anwendungen - vom Architekturentwurf bis zur Veröffentlichung im App Store.",
       "Definition der technischen Strategie und Architektur für Mobile- und Backend-Systeme mit Blick auf Skalierbarkeit und langfristige Wartbarkeit.",
       "Führung und Mentoring des Entwicklungsteams, Festlegung von Coding-Standards, Durchführung von Reviews und Etablierung bewährter Entwicklungspraktiken.",
       "Konzeption und Umsetzung sicherer Backend-Dienste und REST-APIs für mobile Anwendungen und Webanwendungen.",
@@ -28,7 +44,7 @@ export const experiencesDe: Experience[] = [
       "REST APIs", "Docker", "Kubernetes", "Azure DevOps", "OpenTelemetry",
     ],
     intro:
-      "In meiner aktuellen Rolle beim LMZ BW verantworte ich den gesamten Produktentwicklungszyklus von der Idee bis zur Auslieferung. Dabei übernehme ich die End-to-End-Verantwortung für Architektur, Umsetzung, Infrastruktur und Release-Management, steuere die Produktrichtung, koordiniere Teams und sichere die technische Qualität über den gesamten Stack hinweg.",
+      "In meiner Rolle beim LMZ BW verantwortete ich den gesamten Produktentwicklungszyklus von der Idee bis zur Auslieferung. Dabei übernahm ich die End-to-End-Verantwortung für Architektur, Umsetzung, Infrastruktur und Release-Management, steuerte die Produktrichtung, koordinierte Teams und sicherte die technische Qualität über den gesamten Stack hinweg.",
     detailsHeading: "Wesentliche Verantwortlichkeiten und Erfolge:",
   },
   {
@@ -36,7 +52,7 @@ export const experiencesDe: Experience[] = [
     company: "WS Audiology",
     role: "Lead Software Engineer für mobile Anwendungen (Teamgröße: 5)",
     location: "Erlangen",
-    period: "07/2021 – 06/2024",
+    period: "07/2021 - 06/2024",
     summary:
       "Leitete Architektur und Auslieferung mobiler SDKs mit .NET, Swift und Bluetooth Low Energy für produktive Medizinsoftware.",
     website: "https://wsa.com",
@@ -58,7 +74,7 @@ export const experiencesDe: Experience[] = [
     company: "Mathema",
     role: "Senior Software Engineer",
     location: "Nürnberg",
-    period: "02/2019 – 06/2021",
+    period: "02/2019 - 06/2021",
     summary:
       "Entwicklung unternehmenskritischer C#/.NET-Systeme und Verbesserung der Qualität durch Einführung automatisierter Tests.",
     website: "https://mathema.de",
@@ -77,7 +93,7 @@ export const experiencesDe: Experience[] = [
     company: "Endava",
     role: "Senior Software Engineer",
     location: "Skopje",
-    period: "10/2017 – 01/2019",
+    period: "10/2017 - 01/2019",
     summary:
       "Umsetzung umfangreicher C#-Integrationen für die Versicherungsbranche mit konsequentem TDD und hoher Automatisierung.",
     website: "https://endava.com",
@@ -96,7 +112,7 @@ export const experiencesDe: Experience[] = [
     company: "Musala Soft (übernommen von Avenga)",
     role: "Software Engineer",
     location: "Skopje",
-    period: "04/2016 – 10/2017",
+    period: "04/2016 - 10/2017",
     summary:
       "Entwicklung von Windows-Mobile-/UWP- und ASP.NET-MVC-Anwendungen für Gesundheitswesen und Versicherungen.",
     website: "https://linkedin.com/company/musala-soft/",
@@ -114,7 +130,7 @@ export const experiencesDe: Experience[] = [
     company: "IN2",
     role: "Software Engineer",
     location: "Skopje",
-    period: "01/2015 – 04/2016",
+    period: "01/2015 - 04/2016",
     summary:
       "Umsetzung von WPF-Unternehmenssystemen für das Gesundheitswesen sowie zugehöriger Reporting- und Datenschichten.",
     website: "https://in2.eu/en/home-en/",

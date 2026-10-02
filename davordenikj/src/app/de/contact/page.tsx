@@ -10,7 +10,7 @@ import { ContactForm } from "../../../components/ContactForm";
 import { profileDe } from "../../../data/content.de";
 
 const description =
-  "Kontaktieren Sie Davor Denikj zu passenden Vor-Ort-Positionen in Pendeldistanz zu Nürnberg sowie zu Hybrid- und Remote-Positionen als Lead Software Engineer oder Tech Lead.";
+  "Kontaktieren Sie Davor Denikj zu passenden Vor-Ort-Positionen in Pendeldistanz zu Nürnberg sowie zu Hybrid- und Remote-Positionen als Staff Software Engineer oder Tech Lead.";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "/de/contact",
-    title: "Kontakt – Davor Denikj",
+    title: "Kontakt - Davor Denikj",
     description,
     locale: "de_DE",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kontakt – Davor Denikj",
+    title: "Kontakt - Davor Denikj",
     description,
     images: ["/opengraph-image"],
   },
@@ -52,7 +52,8 @@ export default function GermanContactPage() {
           <p className="section-kicker">Passende Themen</p>
           <h2>Wobei ich unterstützen kann</h2>
           <ul className="compact-list">
-            <li>Positionen als Lead Software Engineer und Tech Lead</li>
+            <li>Positionen als Staff Software Engineer und Tech Lead</li>
+            <li>KI-Lösungen und Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden</li>
             <li>Senior- und Principal-Level-Entwicklung mit .NET / C#</li>
             <li>Swift, iOS und plattformübergreifende mobile Systeme</li>
             <li>Backend- und Cloud-Architektur für sichere, skalierbare Systeme</li>
@@ -72,8 +73,8 @@ export default function GermanContactPage() {
           </div>
           <div className="location-focus">
             <p>Rollenschwerpunkt</p>
-            <strong>Lead Software Engineer / Tech Lead</strong>
-            <span>.NET · Mobile · Backend · Cloud</span>
+            <strong>Staff Software Engineer / Tech Lead</strong>
+            <span>KI · .NET · Mobile · Backend · Cloud</span>
           </div>
           <div className="location-profile-links">
             <p>Profile &amp; Lebenslauf</p>

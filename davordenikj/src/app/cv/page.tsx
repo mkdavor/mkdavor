@@ -14,10 +14,10 @@ import { languages } from "../../data/languages";
 import { skillGroups } from "../../data/skills";
 
 const description =
-  "Accessible HTML CV for Davor Denikj, Lead Software Engineer specializing in .NET, Swift, mobile, backend, cloud systems, and technical leadership.";
+  "Davor Denikj, Staff Software Engineer at Xempus. CV covering AI solutions, forward-deployed engineering, technical leadership, .NET, Swift, and cloud systems.";
 
 export const metadata: Metadata = {
-  title: "CV - Lead Software Engineer",
+  title: "CV - Staff Software Engineer",
   description,
   alternates: {
     canonical: "/cv",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "/cv",
-    title: "Davor Denikj - Lead Software Engineer CV",
+    title: "Davor Denikj - Staff Software Engineer CV",
     description,
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Davor Denikj - Lead Software Engineer CV",
+    title: "Davor Denikj - Staff Software Engineer CV",
     description,
     images: ["/opengraph-image"],
   },
@@ -45,7 +45,7 @@ export default function CvPage() {
         <div className="cv-heading">
           <p className="eyebrow">Curriculum vitae</p>
           <h1>{profile.name}</h1>
-          <p className="detail-lead">Lead Software Engineer | .NET & Swift | Mobile, Backend & Cloud Systems</p>
+          <p className="detail-lead">Staff Software Engineer | .NET & Swift | Mobile, Backend & Cloud Systems</p>
         </div>
         <div className="cv-actions no-print">
           <a className="button button-primary" href="/Davor-Denikj-CV-English.pdf" download>
@@ -117,7 +117,9 @@ export default function CvPage() {
                 <ul>
                   {experience.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
-                <p className="cv-tech"><strong>Tech:</strong> {experience.technologies.join(", ")}</p>
+                {experience.technologies.length > 0 && (
+                  <p className="cv-tech"><strong>Tech:</strong> {experience.technologies.join(", ")}</p>
+                )}
               </article>
             ))}
           </section>

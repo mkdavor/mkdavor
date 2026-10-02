@@ -4,15 +4,15 @@ import type { EducationItem, Project } from "./types";
 export const profileDe = {
   avatar: assetUrl("me.png"),
   avatarAlt: "Davor Denikj",
-  role: "Lead Software Engineer",
+  role: "Staff Software Engineer",
   name: "Davor Denikj",
   subtitle: ".NET, Swift, Mobile-, Backend- und Cloud-Systeme",
   location: "Nürnberg, Deutschland",
   availability: "Offen für passende Vor-Ort-, Hybrid- und Remote-Positionen",
   shortSummary:
-    "Ich konzipiere und realisiere produktive Softwarelösungen für Backend, Mobile, Cloud und DevOps – und führe die Teams, die sie entwickeln.",
+    "Bei Xempus entwickle ich KI-Lösungen für die Versicherungsbranche und bringe sie in den Produktivbetrieb. Dabei verbinde ich technische Führung mit Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden.",
   summary:
-    "Lead Software Engineer mit über 12 Jahren Erfahrung in Konzeption, Architektur und Umsetzung von Backend- und mobilen Anwendungen mit .NET und Swift. Nachweisliche Erfahrung in der Führung von Entwicklungsteams und im Aufbau skalierbarer Produktivsysteme von der Idee bis zum Release – mit klarem Fokus auf Clean Architecture, langfristige Wartbarkeit und geschäftsorientierte technische Entscheidungen.",
+    "Staff Software Engineer bei Xempus mit Fokus auf KI-Lösungen für die Versicherungsbranche und Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden. Über 12 Jahre Erfahrung in Konzeption, Architektur und Umsetzung von Backend- und mobilen Anwendungen mit .NET und Swift. Nachweisliche Erfahrung in der Führung von Entwicklungsteams und im Aufbau skalierbarer Produktivsysteme von der Idee bis zum Release - mit klarem Fokus auf Clean Architecture, langfristige Wartbarkeit und geschäftsorientierte technische Entscheidungen.",
 };
 
 export const careerHighlightsDe = [
@@ -36,7 +36,7 @@ export const projectsDe: Project[] = [
     id: "deutschland-heute",
     slug: "deutschland-heute",
     name: "Deutschland Heute",
-    tagline: "Alles, was heute zählt – in einer ruhigen App",
+    tagline: "Alles, was heute zählt - in einer ruhigen App",
     description:
       "Eine native iPhone-App, die Feiertage, Schulferien, Brückentage, Sonnenzeiten, aktuelle Kraftstoffpreise, ein tägliches Zitat und historische Ereignisse des Tages vereint.",
     role: "Alleiniger Entwickler und Produktverantwortlicher",
@@ -91,7 +91,7 @@ export const projectsDe: Project[] = [
     id: "mklive-radio",
     slug: "mk-live-radio",
     name: "MK Live Radio",
-    tagline: "Mazedonisches Radio – weltweit verfügbar",
+    tagline: "Mazedonisches Radio - weltweit verfügbar",
     description:
       "Eigenständig entwickelte und betreute iOS- und Android-App, die weltweit mehr als 70 mazedonische Radiosender streamt.",
     role: "Alleiniger Entwickler und Betreiber",
@@ -152,7 +152,7 @@ export const projectsDe: Project[] = [
       "Integration in mobile Wallets",
     ],
     architecture: [
-      "End-to-End-Verantwortung als alleiniger Entwickler – von Produktidee und Architektur bis zu Umsetzung, Infrastruktur und Auslieferung",
+      "End-to-End-Verantwortung als alleiniger Entwickler - von Produktidee und Architektur bis zu Umsetzung, Infrastruktur und Auslieferung",
       ".NET-10-Backend und API-Plattform",
       "Containerisierte, selbst betriebene Kubernetes-Infrastruktur bei Hetzner",
       "Identity- und Access-Management mit ZITADEL",

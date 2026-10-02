@@ -88,8 +88,8 @@ const profileJsonLd = {
       },
       worksFor: {
         "@type": "Organization",
-        name: "Landesmedienzentrum Baden-Württemberg",
-        url: "https://lmz-bw.de",
+        name: "Xempus",
+        url: "https://www.xempus.ai",
       },
       alumniOf: {
         "@type": "CollegeOrUniversity",

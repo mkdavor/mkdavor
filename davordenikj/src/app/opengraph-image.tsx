@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Davor Denikj - Lead Software Engineer";
+export const alt = "Davor Denikj - Staff Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -24,7 +24,7 @@ export default function OpenGraphImage() {
         davordenikj.com
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-        <div style={{ color: "#ff6347", fontSize: 26, fontWeight: 700, letterSpacing: 1 }}>LEAD SOFTWARE ENGINEER</div>
+        <div style={{ color: "#ff6347", fontSize: 26, fontWeight: 700, letterSpacing: 1 }}>STAFF SOFTWARE ENGINEER</div>
         <div style={{ fontSize: 76, fontWeight: 800, letterSpacing: -3 }}>Davor Denikj</div>
         <div style={{ color: "#4a5667", fontSize: 34 }}>.NET · Swift · Mobile · Backend · Cloud</div>
       </div>

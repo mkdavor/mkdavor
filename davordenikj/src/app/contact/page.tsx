@@ -10,7 +10,7 @@ import { ContactForm } from "../../components/ContactForm";
 import { profile } from "../../data/content";
 
 const description =
-  "Contact Davor Denikj about suitable on-site opportunities within commuting distance of Nuremberg, as well as hybrid or remote Lead Software Engineer and Tech Lead roles.";
+  "Contact Davor Denikj about suitable on-site opportunities within commuting distance of Nuremberg, as well as hybrid or remote Staff Software Engineer and Tech Lead roles.";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -51,7 +51,8 @@ export default function ContactPage() {
           <p className="section-kicker">Good fit</p>
           <h2>Areas I can help with</h2>
           <ul className="compact-list">
-            <li>Lead Software Engineer and Tech Lead roles</li>
+            <li>Staff Software Engineer and Tech Lead roles</li>
+            <li>AI solutions and forward-deployed engineering alongside customers</li>
             <li>Senior and principal-level .NET / C# engineering</li>
             <li>Swift, iOS, and cross-platform mobile systems</li>
             <li>Backend and cloud architecture for secure, scalable systems</li>
@@ -71,8 +72,8 @@ export default function ContactPage() {
           </div>
           <div className="location-focus">
             <p>Role focus</p>
-            <strong>Lead Software Engineer / Tech Lead</strong>
-            <span>.NET · Mobile · Backend · Cloud</span>
+            <strong>Staff Software Engineer / Tech Lead</strong>
+            <span>AI · .NET · Mobile · Backend · Cloud</span>
           </div>
           <div className="location-profile-links">
             <p>Profiles &amp; CV</p>

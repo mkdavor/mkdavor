@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { HomeContent } from "../page";
 import { SITE_NAME } from "../../lib/site";
 
-const title = "Davor Denikj – Lead Software Engineer | .NET, Swift & Cloud";
+const title = "Davor Denikj - Staff Software Engineer | .NET, Swift & Cloud";
 const description =
-  "Lead Software Engineer in Nürnberg mit über 12 Jahren Erfahrung in .NET, Swift, Mobile-, Backend- und Cloud-Systemen sowie praxisnaher technischer Führung.";
+  "Staff Software Engineer bei Xempus, wohnhaft in Nürnberg. KI-Lösungen für Versicherungen, Forward-Deployed Engineering und über 12 Jahre Erfahrung in der Softwareentwicklung.";
 
 export const metadata: Metadata = {
   title: { absolute: title },

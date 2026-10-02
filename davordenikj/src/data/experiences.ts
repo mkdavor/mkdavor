@@ -3,25 +3,41 @@ import type { Experience } from "./types";
 
 export const experiences: Experience[] = [
   {
+    id: "xempus",
+    company: "Xempus",
+    role: "Staff Software Engineer",
+    location: "Munich",
+    period: "08/2026 - Present",
+    summary:
+      "Building and deploying AI solutions for the insurance sector, combining staff-level technical leadership with hands-on, forward-deployed engineering alongside customers.",
+    website: "https://www.xempus.ai",
+    websiteLabel: "xempus.ai",
+    logo: assetUrl("xempusLogo.svg"),
+    details: [
+      "Building and deploying AI solutions for the insurance sector, combining staff-level technical leadership with hands-on, forward-deployed engineering alongside customers.",
+    ],
+    technologies: [],
+  },
+  {
     id: "lmz",
     company: "Landesmedienzentrum Baden-Württemberg",
     role: "Lead Software Engineer (Team Size: 4)",
     location: "Stuttgart",
-    period: "07/2024 - Present",
+    period: "07/2024 - 08/2026",
     summary:
-      "Lead the end-to-end product lifecycle for iOS, iPadOS, mobile, and backend systems, from architectural design through release and operation.",
+      "Led the end-to-end product lifecycle for iOS, iPadOS, mobile, and backend systems, from architectural design through release and operation.",
     website: "https://lmz-bw.de",
     websiteLabel: "lmz-bw.de",
     logo: assetUrl("lmzLogo.png"),
     details: [
-      "Lead the end-to-end product lifecycle for iOS and iPadOS applications, from architectural design to App Store release.",
-      "Define technical strategy and architecture for mobile and backend systems, ensuring scalability and long-term maintainability.",
-      "Lead and mentor the development team, establish coding standards, conduct reviews, and enforce engineering best practices.",
-      "Design and implement secure backend services and REST APIs powering mobile and web applications.",
-      "Design, build, and maintain CI/CD pipelines and containerized infrastructure using Docker, Kubernetes, and Azure DevOps.",
-      "Coordinate across product, design, and infrastructure teams to align technical execution with strategic goals.",
-      "Design and implement secure authentication and authorization solutions using Keycloak, including OAuth 2.0, OpenID Connect (OIDC), role-based access control, and single sign-on (SSO).",
-      "Establish observability practices using OpenTelemetry, centralized logging, distributed tracing, and metrics.",
+      "Led the end-to-end product lifecycle for iOS and iPadOS applications, from architectural design to App Store release.",
+      "Defined technical strategy and architecture for mobile and backend systems, ensuring scalability and long-term maintainability.",
+      "Led and mentored the development team, established coding standards, conducted reviews, and enforced engineering best practices.",
+      "Designed and implemented secure backend services and REST APIs powering mobile and web applications.",
+      "Designed, built, and maintained CI/CD pipelines and containerized infrastructure using Docker, Kubernetes, and Azure DevOps.",
+      "Coordinated across product, design, and infrastructure teams to align technical execution with strategic goals.",
+      "Designed and implemented secure authentication and authorization solutions using Keycloak, including OAuth 2.0, OpenID Connect (OIDC), role-based access control, and single sign-on (SSO).",
+      "Established observability practices using OpenTelemetry, centralized logging, distributed tracing, and metrics.",
     ],
     technologies: [
       ".NET 10",
@@ -38,7 +54,7 @@ export const experiences: Experience[] = [
       "OpenTelemetry",
     ],
     intro:
-      "In my current role at LMZ BW, I lead the full lifecycle of product development from concept through delivery, with end-to-end ownership across architecture, implementation, infrastructure, and release management. I am responsible for steering product direction, coordinating across teams, and ensuring technical excellence throughout the stack.",
+      "In my role at LMZ BW, I led the full lifecycle of product development from concept through delivery, with end-to-end ownership across architecture, implementation, infrastructure, and release management. I was responsible for steering product direction, coordinating across teams, and ensuring technical excellence throughout the stack.",
     detailsHeading: "Key responsibilities and achievements:",
   },
   {

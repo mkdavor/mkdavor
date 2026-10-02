@@ -14,7 +14,7 @@ import { languagesDe } from "../../../data/languages.de";
 import { skillGroups } from "../../../data/skills";
 
 const description =
-  "Barrierearmer HTML-Lebenslauf von Davor Denikj, Lead Software Engineer für .NET, Swift, Mobile-, Backend- und Cloud-Systeme sowie technische Führung.";
+  "Lebenslauf von Davor Denikj, Staff Software Engineer bei Xempus: KI-Lösungen, Forward-Deployed Engineering, technische Führung, .NET, Swift und Cloud-Systeme.";
 
 const skillGroupNames: Record<string, string> = {
   Backend: "Backend",
@@ -26,7 +26,7 @@ const skillGroupNames: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: "Lebenslauf – Lead Software Engineer",
+  title: "Lebenslauf - Staff Software Engineer",
   description,
   alternates: {
     canonical: "/de/cv",
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "/de/cv",
-    title: "Davor Denikj – Lebenslauf als Lead Software Engineer",
+    title: "Davor Denikj - Lebenslauf als Staff Software Engineer",
     description,
     locale: "de_DE",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Davor Denikj – Lebenslauf als Lead Software Engineer",
+    title: "Davor Denikj - Lebenslauf als Staff Software Engineer",
     description,
     images: ["/opengraph-image"],
   },
@@ -55,7 +55,7 @@ export default function GermanCvPage() {
         <div className="cv-heading">
           <p className="eyebrow">Lebenslauf</p>
           <h1>{profileDe.name}</h1>
-          <p className="detail-lead">Lead Software Engineer | .NET & Swift | Mobile-, Backend- & Cloud-Systeme</p>
+          <p className="detail-lead">Staff Software Engineer | .NET & Swift | Mobile-, Backend- & Cloud-Systeme</p>
         </div>
         <div className="cv-actions no-print">
           <a className="button button-primary" href="/Davor-Denikj-CV-English.pdf" download>
@@ -127,7 +127,9 @@ export default function GermanCvPage() {
                 <ul>
                   {experience.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
-                <p className="cv-tech"><strong>Technologien:</strong> {experience.technologies.join(", ")}</p>
+                {experience.technologies.length > 0 && (
+                  <p className="cv-tech"><strong>Technologien:</strong> {experience.technologies.join(", ")}</p>
+                )}
               </article>
             ))}
           </section>
