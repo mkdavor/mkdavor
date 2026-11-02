@@ -13,7 +13,7 @@ export function CertificationDetails({
   return (
     <>
       <Heading>{certification.name}</Heading>
-      <p>{certification.title}</p>
+      <p>{isGerman ? certification.titleDe : certification.title}</p>
       <p>{isGerman ? "Zertifizierungsstelle" : "Certification body"}: {certification.certificationBody}</p>
       <a className="text-link" href={certification.verificationUrl} target="_blank" rel="noreferrer">
         {isGerman ? "Zertifikat verifizieren" : "Verify certificate"} <IoOpenOutline aria-hidden="true" />

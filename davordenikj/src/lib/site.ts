@@ -31,3 +31,21 @@ export const SITE_KEYWORDS = [
   "Azure DevOps",
   "Portfolio",
 ];
+
+export const SITE_KEYWORDS_DE = [
+  "Davor Denikj",
+  "Staff Software Engineer",
+  ".NET",
+  "C#",
+  "Swift",
+  "SwiftUI",
+  "Mobile-Architektur",
+  "Backend-Architektur",
+  "Softwarearchitekt",
+  "Zertifizierter Softwarearchitekt",
+  "iSAQB CPSA-F",
+  "Kubernetes",
+  "Docker",
+  "Azure DevOps",
+  "Portfolio",
+];

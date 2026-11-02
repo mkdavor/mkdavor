@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     title: "Kontakt - Davor Denikj",
     description,
     locale: "de_DE",
-    images: ["/opengraph-image"],
+    images: ["/de/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kontakt - Davor Denikj",
     description,
-    images: ["/opengraph-image"],
+    images: ["/de/opengraph-image"],
   },
 };
 

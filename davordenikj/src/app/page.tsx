@@ -40,7 +40,7 @@ import { experiencesDe } from "../data/experiences.de";
 import { languages } from "../data/languages";
 import { languagesDe } from "../data/languages.de";
 import { skillGroups, skills } from "../data/skills";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "../lib/site";
+import { SITE_DESCRIPTION, SITE_DESCRIPTION_DE, SITE_NAME, SITE_TITLE, SITE_TITLE_DE, SITE_URL } from "../lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: SITE_TITLE },
@@ -63,61 +63,68 @@ export const metadata: Metadata = {
   },
 };
 
-const profileJsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfilePage",
-      "@id": `${SITE_URL}/#profile`,
-      url: SITE_URL,
-      name: SITE_TITLE,
-      description: SITE_DESCRIPTION,
-      mainEntity: { "@id": `${SITE_URL}/#person` },
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-    },
-    {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: profile.name,
-      url: SITE_URL,
-      image: `${SITE_URL}${profile.avatar}`,
-      jobTitle: profile.role,
-      description: SITE_DESCRIPTION,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Nuremberg",
-        addressCountry: "DE",
+function createProfileJsonLd(locale: "en" | "de") {
+  const isGerman = locale === "de";
+  const description = isGerman ? SITE_DESCRIPTION_DE : SITE_DESCRIPTION;
+  const pageUrl = isGerman ? `${SITE_URL}/de` : SITE_URL;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": `${pageUrl}/#profile`,
+        url: pageUrl,
+        name: isGerman ? SITE_TITLE_DE : SITE_TITLE,
+        inLanguage: isGerman ? "de" : "en",
+        description,
+        mainEntity: { "@id": `${SITE_URL}/#person` },
+        isPartOf: { "@id": `${SITE_URL}/#website` },
       },
-      worksFor: {
-        "@type": "Organization",
-        name: "Xempus",
-        url: "https://www.xempus.ai",
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: profile.name,
+        url: SITE_URL,
+        image: `${SITE_URL}${profile.avatar}`,
+        jobTitle: profile.role,
+        description,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: isGerman ? "Nürnberg" : "Nuremberg",
+          addressCountry: "DE",
+        },
+        worksFor: {
+          "@type": "Organization",
+          name: "Xempus",
+          url: "https://www.xempus.ai",
+        },
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "Ss. Cyril and Methodius University of Skopje",
+          url: "https://www.ukim.edu.mk/en_index.php",
+        },
+        knowsAbout: skillGroups.flatMap((group) => group.items),
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          name: `${certification.name}: ${isGerman ? certification.titleDe : certification.title}`,
+          credentialCategory: isGerman ? "Berufliche Zertifizierung" : "Professional certification",
+          url: certification.verificationUrl,
+          recognizedBy: { "@type": "Organization", name: "iSAQB" },
+        },
+        sameAs: ["https://linkedin.com/in/davordenikj", "https://github.com/mkdavor"],
       },
-      alumniOf: {
-        "@type": "CollegeOrUniversity",
-        name: "Ss. Cyril and Methodius University of Skopje",
-        url: "https://www.ukim.edu.mk/en_index.php",
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        description,
+        publisher: { "@id": `${SITE_URL}/#person` },
       },
-      knowsAbout: skillGroups.flatMap((group) => group.items),
-      hasCredential: {
-        "@type": "EducationalOccupationalCredential",
-        name: `${certification.name}: ${certification.title}`,
-        credentialCategory: "Professional certification",
-        url: certification.verificationUrl,
-        recognizedBy: { "@type": "Organization", name: "iSAQB" },
-      },
-      sameAs: ["https://linkedin.com/in/davordenikj", "https://github.com/mkdavor"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      description: SITE_DESCRIPTION,
-      publisher: { "@id": `${SITE_URL}/#person` },
-    },
-  ],
-};
+    ],
+  };
+}
 
 const additionalTechnologyIcons = [
   { name: "iOS", Icon: SiApple, color: "#000000" },
@@ -239,7 +246,7 @@ export function HomeContent({ locale = "en" }: HomeContentProps) {
 
   return (
     <main id="main-content" className="page">
-      <JsonLd data={profileJsonLd} />
+      <JsonLd data={createProfileJsonLd(locale)} />
       <section className="bento-grid" aria-label={copy.profileLabel}>
         <article className="tile tile-hero">
           <div className="hero-layout">

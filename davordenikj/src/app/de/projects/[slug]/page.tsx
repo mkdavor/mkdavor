@@ -37,13 +37,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       title: `${title} | ${SITE_NAME}`,
       description: project.description,
       locale: "de_DE",
-      images: ["/opengraph-image"],
+      images: ["/de/opengraph-image"],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${SITE_NAME}`,
       description: project.description,
-      images: ["/opengraph-image"],
+      images: ["/de/opengraph-image"],
     },
   };
 }

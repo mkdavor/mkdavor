@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "de_DE",
     alternateLocale: ["en_US"],
-    images: ["/opengraph-image"],
+    images: ["/de/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/opengraph-image"],
+    images: ["/de/opengraph-image"],
   },
 };
 

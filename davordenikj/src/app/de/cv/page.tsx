@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     title,
     description,
     locale: "de_DE",
-    images: ["/opengraph-image"],
+    images: ["/de/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/opengraph-image"],
+    images: ["/de/opengraph-image"],
   },
 };
 
