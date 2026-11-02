@@ -46,7 +46,7 @@ export function ContactForm({ locale = "en" }: ContactFormProps) {
       form.reset();
       setStatus({
         type: "success",
-        message: isGerman ? "Nachricht erfolgreich gesendet. Vielen Dank – ich melde mich zeitnah bei Ihnen." : "Message sent successfully. Thank you — I’ll get back to you soon.",
+        message: isGerman ? "Nachricht erfolgreich gesendet. Vielen Dank. Ich melde mich zeitnah bei Ihnen." : "Message sent successfully. Thank you. I’ll get back to you soon.",
       });
     } catch (error) {
       setStatus({

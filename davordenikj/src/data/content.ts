@@ -10,13 +10,14 @@ export const profile = {
   location: "Nuremberg, Germany",
   availability: "Open to suitable on-site, hybrid, and remote opportunities",
   shortSummary:
-    "I’m a hands-on software engineer with 12+ years of experience designing, building, and delivering software across mobile, backend, and cloud platforms. I enjoy solving complex technical challenges, turning ideas into reliable products, and taking ownership from architecture to production. Along the way, I’ve led engineering teams, shaped technical decisions, and stayed close to what I enjoy most: writing great software.",
+    "I’m a hands-on software engineer with 13+ years of experience designing, building, and delivering software across mobile, backend, and cloud platforms. I enjoy solving complex technical challenges, turning ideas into reliable products, and taking ownership from architecture to production. Along the way, I’ve led engineering teams, shaped technical decisions, and stayed close to what I enjoy most: writing great software.",
   summary:
-    "I’m a hands-on software engineer with 12+ years of experience designing, building, and delivering software across mobile, backend, and cloud platforms. I enjoy solving complex technical challenges, turning ideas into reliable products, and taking ownership from architecture to production. Along the way, I’ve led engineering teams, shaped technical decisions, and stayed close to what I enjoy most: writing great software.",
+    "Staff Software Engineer at Xempus, building AI solutions for insurance through forward-deployed engineering alongside customers. I bring 13+ years of experience designing, architecting, and delivering backend and mobile applications using .NET and Swift. Proven experience leading engineering teams and building scalable production systems from concept to release, with a strong focus on clean architecture, long-term maintainability, and business-driven technical decisions.",
 };
 
 export const careerHighlights = [
-  "12+ years of software engineering experience",
+  "13+ years of software engineering experience",
+  "iSAQB Certified Professional for Software Architecture (CPSA-F)",
   "Led engineering teams of up to five people",
   "Led complex software initiatives from architecture through production",
   "Delivered products across backend, mobile, cloud, and DevOps",

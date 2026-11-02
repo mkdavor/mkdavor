@@ -49,7 +49,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Davor Denikj - Staff Software Engineer",
+        alt: "Davor Denikj - Certified Software Architect (iSAQB CPSA-F) and Staff Software Engineer",
       },
     ],
   },

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { HomeContent } from "../page";
-import { SITE_NAME } from "../../lib/site";
+import { SITE_DESCRIPTION_DE, SITE_NAME, SITE_TITLE_DE } from "../../lib/site";
 
-const title = "Davor Denikj - Staff Software Engineer | .NET, Swift & Cloud";
-const description =
-  "Staff Software Engineer bei Xempus, wohnhaft in Nürnberg. KI-Lösungen für Versicherungen, Forward-Deployed Engineering und über 12 Jahre Erfahrung in der Softwareentwicklung.";
+const title = SITE_TITLE_DE;
+const description = SITE_DESCRIPTION_DE;
 
 export const metadata: Metadata = {
   title: { absolute: title },

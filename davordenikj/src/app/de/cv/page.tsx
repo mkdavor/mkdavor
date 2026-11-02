@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CertificationDetails } from "../../../components/CertificationDetails";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,8 +14,9 @@ import { experiencesDe } from "../../../data/experiences.de";
 import { languagesDe } from "../../../data/languages.de";
 import { skillGroups } from "../../../data/skills";
 
+const title = "Davor Denikj | Lebenslauf | Zertifizierter Softwarearchitekt";
 const description =
-  "Lebenslauf von Davor Denikj, Staff Software Engineer bei Xempus: KI-Lösungen, Forward-Deployed Engineering, technische Führung, .NET, Swift und Cloud-Systeme.";
+  "Lebenslauf von Davor Denikj, zertifizierter Softwarearchitekt (iSAQB CPSA-F) und Staff Software Engineer bei Xempus mit über 13 Jahren Erfahrung.";
 
 const skillGroupNames: Record<string, string> = {
   Backend: "Backend",
@@ -26,7 +28,7 @@ const skillGroupNames: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: "Lebenslauf - Staff Software Engineer",
+  title: { absolute: title },
   description,
   alternates: {
     canonical: "/de/cv",
@@ -34,14 +36,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "/de/cv",
-    title: "Davor Denikj - Lebenslauf als Staff Software Engineer",
+    title,
     description,
     locale: "de_DE",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Davor Denikj - Lebenslauf als Staff Software Engineer",
+    title,
     description,
     images: ["/opengraph-image"],
   },
@@ -95,6 +97,11 @@ export default function GermanCvPage() {
                 <p>{item.institution}</p>
               </div>
             ))}
+          </section>
+
+          <section>
+            <h2>Zertifizierung</h2>
+            <CertificationDetails locale="de" />
           </section>
 
           <section>

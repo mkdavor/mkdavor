@@ -206,7 +206,7 @@ summary {
     "experience experience experience experience experience experience experience experience leadership leadership leadership leadership"
     "experience experience experience experience experience experience experience experience expertise expertise expertise expertise"
     "projects projects projects projects projects projects projects projects projects projects projects projects"
-    "education education education education languages languages languages contact contact contact contact contact"
+    "qualifications qualifications qualifications qualifications qualifications qualifications qualifications qualifications qualifications qualifications qualifications qualifications"
     "github github github github github github github github github github github github";
   gap: 1rem;
   align-items: stretch;
@@ -902,8 +902,34 @@ summary {
   margin-top: 1rem;
 }
 
+.qualifications-grid {
+  grid-area: qualifications;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "education languages"
+    "education contact";
+  gap: 1rem;
+  min-width: 0;
+}
+
 .tile-education {
   grid-area: education;
+}
+
+.education-certification {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.education-certification h3 {
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.education-certification p:not(.section-kicker) {
+  font-size: 0.88rem;
 }
 
 .education-item h3 {
@@ -921,7 +947,8 @@ summary {
 
 .language-list {
   display: grid;
-  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1605,7 +1632,7 @@ summary {
   .tile-impact,
   .tile-experience,
   .project-section,
-  .tile-contact,
+  .qualifications-grid,
   .tile-github {
     grid-column: 1 / -1;
   }
@@ -1745,6 +1772,14 @@ summary {
   .project-grid,
   .detail-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .qualifications-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "education"
+      "languages"
+      "contact";
   }
 
   .bento-grid > *,

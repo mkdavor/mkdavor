@@ -18,6 +18,8 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { JsonLd } from "../components/JsonLd";
+import { CertificationDetails } from "../components/CertificationDetails";
+import { certification } from "../data/certification";
 import { ProjectCard } from "../components/ProjectCard";
 import { ExperienceList } from "../components/ExperienceList";
 import {
@@ -80,7 +82,7 @@ const profileJsonLd = {
       url: SITE_URL,
       image: `${SITE_URL}${profile.avatar}`,
       jobTitle: profile.role,
-      description: profile.summary,
+      description: SITE_DESCRIPTION,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Nuremberg",
@@ -97,6 +99,13 @@ const profileJsonLd = {
         url: "https://www.ukim.edu.mk/en_index.php",
       },
       knowsAbout: skillGroups.flatMap((group) => group.items),
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        name: `${certification.name}: ${certification.title}`,
+        credentialCategory: "Professional certification",
+        url: certification.verificationUrl,
+        recognizedBy: { "@type": "Organization", name: "iSAQB" },
+      },
       sameAs: ["https://linkedin.com/in/davordenikj", "https://github.com/mkdavor"],
     },
     {
@@ -140,7 +149,7 @@ const technologyIconOrder = [
 const homeCopy = {
   en: {
     profileLabel: "Professional profile",
-    heroSubtitle: "12+ years · .NET · Swift · Backend · Cloud",
+    heroSubtitle: "13+ years · .NET · Swift · Backend · Cloud",
     factsLabel: "Location and availability",
     experienceButton: "View experience",
     projectsButton: "View projects",
@@ -173,7 +182,7 @@ const homeCopy = {
   },
   de: {
     profileLabel: "Berufliches Profil",
-    heroSubtitle: "12+ Jahre · .NET · Swift · Backend · Cloud",
+    heroSubtitle: "13+ Jahre · .NET · Swift · Backend · Cloud",
     factsLabel: "Standort und Verfügbarkeit",
     experienceButton: "Berufserfahrung",
     projectsButton: "Projekte ansehen",
@@ -356,52 +365,58 @@ export function HomeContent({ locale = "en" }: HomeContentProps) {
           </div>
         </section>
 
-        <article className="tile tile-education">
-          <p className="section-kicker">{copy.educationKicker}</p>
-          <h2>{copy.educationTitle}</h2>
-          {currentEducationItems.map((item) => (
-            <div key={item.id} className="education-item">
-              <h3>{item.title}</h3>
-              <p>{item.institution}</p>
-              <a className="text-link" href={item.website} target="_blank" rel="noreferrer">
-                {copy.visitInstitution} <IoArrowForward aria-hidden="true" />
-              </a>
-            </div>
-          ))}
-        </article>
-
-        <article className="tile tile-languages">
-          <p className="section-kicker">{copy.languagesKicker}</p>
-          <h2>{copy.languagesTitle}</h2>
-          <ul className="language-list">
-            {currentLanguages.map((language) => (
-              <li key={language.name}>
-                <span className="language-name">
-                  <Image
-                    className="language-flag"
-                    src={language.flagUrl}
-                    alt={language.flagAlt}
-                    width={20}
-                    height={13}
-                  />
-                  {language.name}
-                </span>
-                <strong className="language-level">{language.level}</strong>
-              </li>
+        <div className="qualifications-grid">
+          <article className="tile tile-education">
+            <p className="section-kicker">{copy.educationKicker}</p>
+            <h2>{copy.educationTitle}</h2>
+            {currentEducationItems.map((item) => (
+              <div key={item.id} className="education-item">
+                <h3>{item.title}</h3>
+                <p>{item.institution}</p>
+                <a className="text-link" href={item.website} target="_blank" rel="noreferrer">
+                  {copy.visitInstitution} <IoArrowForward aria-hidden="true" />
+                </a>
+              </div>
             ))}
-          </ul>
-        </article>
+            <section id="certification" className="education-certification" aria-label={isGerman ? "Zertifizierung" : "Certification"}>
+              <p className="section-kicker">{isGerman ? "Zertifizierung" : "Certification"}</p>
+              <CertificationDetails locale={locale} />
+            </section>
+          </article>
 
-        <article className="tile tile-contact">
-          <p className="section-kicker">{copy.availabilityKicker}</p>
-          <h2>{copy.contactTitle}</h2>
-          <p>{copy.contactBody}</p>
-          <div className="contact-actions">
-            <Link className="button button-primary" href={`${prefix}/contact`}>
-              {copy.contactButton} <IoArrowForward aria-hidden="true" />
-            </Link>
-          </div>
-        </article>
+          <article className="tile tile-languages">
+            <p className="section-kicker">{copy.languagesKicker}</p>
+            <h2>{copy.languagesTitle}</h2>
+            <ul className="language-list">
+              {currentLanguages.map((language) => (
+                <li key={language.name}>
+                  <span className="language-name">
+                    <Image
+                      className="language-flag"
+                      src={language.flagUrl}
+                      alt={language.flagAlt}
+                      width={20}
+                      height={13}
+                    />
+                    {language.name}
+                  </span>
+                  <strong className="language-level">{language.level}</strong>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="tile tile-contact">
+            <p className="section-kicker">{copy.availabilityKicker}</p>
+            <h2>{copy.contactTitle}</h2>
+            <p>{copy.contactBody}</p>
+            <div className="contact-actions">
+              <Link className="button button-primary" href={`${prefix}/contact`}>
+                {copy.contactButton} <IoArrowForward aria-hidden="true" />
+              </Link>
+            </div>
+          </article>
+        </div>
 
         <article className="tile tile-github">
           <IoLogoGithub className="tile-icon" aria-hidden="true" />

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = projectsDe.find((item) => item.slug === slug);
   if (!project) return {};
 
-  const title = `${project.name} – ${project.tagline}`;
+  const title = `${project.name} - ${project.tagline}`;
   const canonical = `/de/projects/${project.slug}`;
   const englishPath = `/projects/${project.slug}`;
 

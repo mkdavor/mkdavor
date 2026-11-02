@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CertificationDetails } from "../../components/CertificationDetails";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,11 +14,12 @@ import { experiences } from "../../data/experiences";
 import { languages } from "../../data/languages";
 import { skillGroups } from "../../data/skills";
 
+const title = "Davor Denikj | CV | Certified Software Architect";
 const description =
-  "Davor Denikj, Staff Software Engineer at Xempus. CV covering AI solutions, forward-deployed engineering, technical leadership, .NET, Swift, and cloud systems.";
+  "CV of Davor Denikj, iSAQB CPSA-F certified software architect and Staff Software Engineer at Xempus. 13+ years in .NET, Swift, backend and cloud systems.";
 
 export const metadata: Metadata = {
-  title: "CV - Staff Software Engineer",
+  title: { absolute: title },
   description,
   alternates: {
     canonical: "/cv",
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "/cv",
-    title: "Davor Denikj - Staff Software Engineer CV",
+    title,
     description,
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Davor Denikj - Staff Software Engineer CV",
+    title,
     description,
     images: ["/opengraph-image"],
   },
@@ -85,6 +87,11 @@ export default function CvPage() {
                 <p>{item.institution}</p>
               </div>
             ))}
+          </section>
+
+          <section>
+            <h2>Certification</h2>
+            <CertificationDetails />
           </section>
 
           <section>

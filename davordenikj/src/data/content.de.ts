@@ -12,11 +12,12 @@ export const profileDe = {
   shortSummary:
     "Bei Xempus entwickle ich KI-Lösungen für die Versicherungsbranche und bringe sie in den Produktivbetrieb. Dabei verbinde ich technische Führung mit Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden.",
   summary:
-    "Staff Software Engineer bei Xempus mit Fokus auf KI-Lösungen für die Versicherungsbranche und Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden. Über 12 Jahre Erfahrung in Konzeption, Architektur und Umsetzung von Backend- und mobilen Anwendungen mit .NET und Swift. Nachweisliche Erfahrung in der Führung von Entwicklungsteams und im Aufbau skalierbarer Produktivsysteme von der Idee bis zum Release - mit klarem Fokus auf Clean Architecture, langfristige Wartbarkeit und geschäftsorientierte technische Entscheidungen.",
+    "Staff Software Engineer bei Xempus mit Fokus auf KI-Lösungen für die Versicherungsbranche und Forward-Deployed Engineering in direkter Zusammenarbeit mit Kunden. Über 13 Jahre Erfahrung in Konzeption, Architektur und Umsetzung von Backend- und mobilen Anwendungen mit .NET und Swift. Nachweisliche Erfahrung in der Führung von Entwicklungsteams und im Aufbau skalierbarer Produktivsysteme von der Idee bis zum Release - mit klarem Fokus auf Clean Architecture, langfristige Wartbarkeit und geschäftsorientierte technische Entscheidungen.",
 };
 
 export const careerHighlightsDe = [
-  "Über 12 Jahre Erfahrung in der Softwareentwicklung",
+  "Über 13 Jahre Erfahrung in der Softwareentwicklung",
+  "iSAQB Certified Professional for Software Architecture (CPSA-F)",
   "Entwicklungsteams mit bis zu fünf Personen geführt",
   "Komplexe Softwarevorhaben von der Architektur bis zum Produktivbetrieb geleitet",
   "Produkte in den Bereichen Backend, Mobile, Cloud und DevOps umgesetzt",
