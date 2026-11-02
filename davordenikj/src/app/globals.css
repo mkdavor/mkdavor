@@ -2003,6 +2003,17 @@ summary {
     break-inside: avoid;
   }
 
+  .tile {
+    animation: none !important;
+  }
+
+  .icon-list a[data-print-label]::after {
+    content: attr(data-print-label);
+    display: block;
+    color: var(--text-soft);
+    font-size: 0.9em;
+  }
+
   a {
     color: inherit;
     text-decoration: none;

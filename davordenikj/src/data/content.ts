@@ -47,13 +47,6 @@ export const socialLinks: SocialLink[] = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     openInNewTab: true,
   },
-  {
-    label: "CV",
-    href: assetUrl("Davor-Denikj-CV-English.pdf"),
-    usesDocumentIcon: true,
-    downloadFileName: "Davor-Denikj-CV-English.pdf",
-    openInNewTab: false,
-  },
 ];
 
 export const projects: Project[] = [

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { CertificationDetails } from "../../../components/CertificationDetails";
+import { SavePdfButton } from "../../../components/SavePdfButton";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  IoDocumentTextOutline,
   IoLocationOutline,
   IoLogoGithub,
   IoLogoLinkedin,
@@ -60,9 +60,7 @@ export default function GermanCvPage() {
           <p className="detail-lead">Staff Software Engineer | .NET & Swift | Mobile-, Backend- & Cloud-Systeme</p>
         </div>
         <div className="cv-actions no-print">
-          <a className="button button-primary" href="/Davor-Denikj-CV-English.pdf" download>
-            <IoDocumentTextOutline aria-hidden="true" /> Englisches PDF herunterladen
-          </a>
+          <SavePdfButton locale="de" />
           <span>Mit der Druckfunktion Ihres Browsers erhalten Sie eine übersichtliche Druckversion auf Deutsch.</span>
         </div>
       </header>
@@ -72,10 +70,10 @@ export default function GermanCvPage() {
           <section>
             <h2>Kontakt</h2>
             <ul className="icon-list">
-              <li><IoMailOutline aria-hidden="true" /><Link href="/de/contact">Kontaktformular</Link></li>
+              <li><IoMailOutline aria-hidden="true" /><Link href="/de/contact" data-print-label="davordenikj.com/de/contact">Kontaktformular</Link></li>
               <li><IoLocationOutline aria-hidden="true" /><span>{profileDe.location}</span></li>
-              <li><IoLogoLinkedin aria-hidden="true" /><a href="https://linkedin.com/in/davordenikj">LinkedIn</a></li>
-              <li><IoLogoGithub aria-hidden="true" /><a href="https://github.com/mkdavor">GitHub</a></li>
+              <li><IoLogoLinkedin aria-hidden="true" /><a href="https://linkedin.com/in/davordenikj" data-print-label="linkedin.com/in/davordenikj">LinkedIn</a></li>
+              <li><IoLogoGithub aria-hidden="true" /><a href="https://github.com/mkdavor" data-print-label="github.com/mkdavor">GitHub</a></li>
             </ul>
           </section>
 

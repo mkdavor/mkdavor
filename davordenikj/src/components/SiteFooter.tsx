@@ -13,9 +13,6 @@ export function SiteFooter() {
       <p>© {new Date().getFullYear()} {profile.name}</p>
       <nav aria-label={isGerman ? "Fußzeilennavigation" : "Footer navigation"}>
         <Link href={isGerman ? "/de/cv" : "/cv"}>HTML CV</Link>
-        <a href="/Davor-Denikj-CV-English.pdf" download>
-          {isGerman ? "Englisches PDF" : "Download PDF"}
-        </a>
         <Link href={isGerman ? "/de/contact" : "/contact"}>{isGerman ? "Kontakt" : "Contact"}</Link>
       </nav>
     </footer>

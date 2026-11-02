@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { CertificationDetails } from "../../components/CertificationDetails";
+import { SavePdfButton } from "../../components/SavePdfButton";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  IoDocumentTextOutline,
   IoLocationOutline,
   IoLogoGithub,
   IoLogoLinkedin,
@@ -50,9 +50,7 @@ export default function CvPage() {
           <p className="detail-lead">Staff Software Engineer | .NET & Swift | Mobile, Backend & Cloud Systems</p>
         </div>
         <div className="cv-actions no-print">
-          <a className="button button-primary" href="/Davor-Denikj-CV-English.pdf" download>
-            <IoDocumentTextOutline aria-hidden="true" /> Download PDF
-          </a>
+          <SavePdfButton />
           <span>Use your browser&apos;s print command for a clean printed copy.</span>
         </div>
       </header>
@@ -62,10 +60,10 @@ export default function CvPage() {
           <section>
             <h2>Contact</h2>
             <ul className="icon-list">
-              <li><IoMailOutline aria-hidden="true" /><Link href="/contact">Contact form</Link></li>
+              <li><IoMailOutline aria-hidden="true" /><Link href="/contact" data-print-label="davordenikj.com/contact">Contact form</Link></li>
               <li><IoLocationOutline aria-hidden="true" /><span>{profile.location}</span></li>
-              <li><IoLogoLinkedin aria-hidden="true" /><a href="https://linkedin.com/in/davordenikj">LinkedIn</a></li>
-              <li><IoLogoGithub aria-hidden="true" /><a href="https://github.com/mkdavor">GitHub</a></li>
+              <li><IoLogoLinkedin aria-hidden="true" /><a href="https://linkedin.com/in/davordenikj" data-print-label="linkedin.com/in/davordenikj">LinkedIn</a></li>
+              <li><IoLogoGithub aria-hidden="true" /><a href="https://github.com/mkdavor" data-print-label="github.com/mkdavor">GitHub</a></li>
             </ul>
           </section>
 

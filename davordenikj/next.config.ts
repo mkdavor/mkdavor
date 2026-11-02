@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  async redirects() {
+    return [
+      // The static PDF was replaced by printing the HTML CV; keep old shared links working.
+      { source: "/Davor-Denikj-CV-English.pdf", destination: "/cv", permanent: false },
+    ];
+  },
   async headers() {
     const immutableAssetHeaders = [
       {
