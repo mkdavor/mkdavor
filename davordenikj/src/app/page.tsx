@@ -266,7 +266,7 @@ export function HomeContent({ locale = "en" }: HomeContentProps) {
               <p className="hero-summary">{currentProfile.shortSummary}</p>
               <div className="hero-facts" aria-label={copy.factsLabel}>
                 <span><IoLocationOutline aria-hidden="true" /> {currentProfile.location}</span>
-                <span className="availability"><i aria-hidden="true" /> {currentProfile.availability}</span>
+                {/* <span className="availability"><i aria-hidden="true" /> {currentProfile.availability}</span> */}
               </div>
               <div className="button-row">
                 <a className="button button-primary" href="#experience">

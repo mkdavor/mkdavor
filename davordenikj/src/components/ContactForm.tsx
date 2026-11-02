@@ -29,6 +29,9 @@ export function ContactForm({ locale = "en" }: ContactFormProps) {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+    const failureMessage = isGerman
+      ? "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es in Kürze erneut."
+      : "The message could not be sent. Please try again shortly.";
 
     setStatus({ type: "submitting", message: isGerman ? "Ihre Nachricht wird gesendet…" : "Sending your message…" });
 
@@ -40,7 +43,10 @@ export function ContactForm({ locale = "en" }: ContactFormProps) {
       const payload = (await response.json().catch(() => null)) as { error?: string } | null;
 
       if (!response.ok) {
-        throw new Error(payload?.error || (isGerman ? "Die Nachricht konnte nicht gesendet werden." : "The message could not be sent."));
+        // Validation (400) and rate-limit (429) errors are localized by the server; use our own message otherwise.
+        const serverMessage = response.status === 400 || response.status === 429 ? payload?.error : undefined;
+        setStatus({ type: "error", message: serverMessage || failureMessage });
+        return;
       }
 
       form.reset();
@@ -48,11 +54,8 @@ export function ContactForm({ locale = "en" }: ContactFormProps) {
         type: "success",
         message: isGerman ? "Nachricht erfolgreich gesendet. Vielen Dank. Ich melde mich zeitnah bei Ihnen." : "Message sent successfully. Thank you. I’ll get back to you soon.",
       });
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message: error instanceof Error ? error.message : (isGerman ? "Die Nachricht konnte nicht gesendet werden." : "The message could not be sent."),
-      });
+    } catch {
+      setStatus({ type: "error", message: failureMessage });
     }
   }
 

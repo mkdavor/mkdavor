@@ -1,13 +1,24 @@
 import { NextResponse } from "next/server";
 import { sendContactEmail } from "../../../lib/server/contactEmail";
+import { createRateLimiter } from "../../../lib/server/rateLimit";
 
 export const runtime = "nodejs";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_REQUEST_BYTES = 20_000;
 
+// Up to 3 messages per visitor every 15 minutes, and 30 messages per hour in total.
+const takeClientLimit = createRateLimiter(3, 15 * 60 * 1000);
+const takeGlobalLimit = createRateLimiter(30, 60 * 60 * 1000);
+
 function asTrimmedString(value: FormDataEntryValue | null) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function getClientKey(request: Request) {
+  // Vercel sets x-forwarded-for to the visitor's address and overwrites any client-supplied value.
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  return forwardedFor || request.headers.get("x-real-ip")?.trim() || "unknown";
 }
 
 function formatSubmittedAt(date: Date) {
@@ -30,7 +41,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "The message is too large." }, { status: 413 });
     }
 
-    const formData = await request.formData();
+    let formData: FormData;
+
+    try {
+      formData = await request.formData();
+    } catch {
+      return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+    }
+
     const website = asTrimmedString(formData.get("website"));
     const isGerman = asTrimmedString(formData.get("locale")) === "de";
 
@@ -66,6 +84,21 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: isGerman ? "Geben Sie eine Nachricht mit 10 bis 5.000 Zeichen ein." : "Enter a message between 10 and 5,000 characters." },
         { status: 400 },
+      );
+    }
+
+    // Count only messages that would be sent, so typos do not use up a visitor's attempts.
+    const clientLimit = takeClientLimit(getClientKey(request));
+    const rateLimit = clientLimit.allowed ? takeGlobalLimit("all") : clientLimit;
+
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        {
+          error: isGerman
+            ? "Zu viele Nachrichten in kurzer Zeit. Bitte versuchen Sie es später erneut."
+            : "Too many messages in a short time. Please try again later.",
+        },
+        { status: 429, headers: { "Retry-After": String(rateLimit.retryAfterSeconds) } },
       );
     }
 

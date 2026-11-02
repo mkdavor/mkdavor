@@ -15,6 +15,15 @@ function closeExperience(id: string) {
   if (dialog instanceof HTMLDialogElement) dialog.close();
 }
 
+// Skip the details dialog when it would only repeat the summary.
+function hasMoreDetails(experience: Experience) {
+  return (
+    Boolean(experience.intro) ||
+    experience.technologies.length > 0 ||
+    experience.details.some((detail) => detail !== experience.summary)
+  );
+}
+
 type ExperienceListProps = {
   items?: Experience[];
   locale?: "en" | "de";
@@ -32,7 +41,7 @@ export function ExperienceList({ items = experiences, locale = "en" }: Experienc
               <Image
                 className="experience-logo"
                 src={experience.logo}
-                alt={`${experience.company} logo`}
+                alt={isGerman ? `Logo von ${experience.company}` : `${experience.company} logo`}
                 width={56}
                 height={56}
                 sizes="56px"
@@ -49,70 +58,77 @@ export function ExperienceList({ items = experiences, locale = "en" }: Experienc
             </div>
           </div>
           <p className="experience-summary">{experience.summary}</p>
-          <button
-            className="experience-modal-trigger"
-            type="button"
-            onClick={() => openExperience(experience.id)}
-          >
-            {isGerman ? "Verantwortlichkeiten und Erfolge" : "Responsibilities and achievements"}
-          </button>
-
-          <dialog
-            id={`experience-dialog-${experience.id}`}
-            className="experience-dialog"
-            aria-labelledby={`experience-dialog-title-${experience.id}`}
-            onClick={(event) => {
-              if (event.target === event.currentTarget) closeExperience(experience.id);
-            }}
-          >
-            <div className="experience-dialog-panel">
-              <header className="experience-dialog-header">
-                <div className="experience-head">
-                  {experience.logo && (
-                    <Image
-                      className="experience-logo"
-                      src={experience.logo}
-                      alt=""
-                      width={56}
-                      height={56}
-                      sizes="56px"
-                    />
-                  )}
-                  <div>
-                    <p className="section-kicker">{experience.period}</p>
-                    <h2 id={`experience-dialog-title-${experience.id}`}>
-                      {experience.company}
-                    </h2>
-                    <p className="meta">{experience.role} · {experience.location}</p>
-                  </div>
-                </div>
-                <button
-                  className="experience-dialog-close"
-                  type="button"
-                  aria-label={isGerman ? `Details zu ${experience.company} schließen` : `Close ${experience.company} details`}
-                  onClick={() => closeExperience(experience.id)}
-                >
-                  <IoClose aria-hidden="true" />
-                </button>
-              </header>
-
-              {experience.intro && <p className="experience-dialog-intro">{experience.intro}</p>}
-              <ul className="detail-list experience-dialog-list">
-                {experience.details.map((detail) => <li key={detail}>{detail}</li>)}
-              </ul>
-              <div className="tag-list" aria-label={`${experience.company} technologies`}>
-                {experience.technologies.map((technology) => <span key={technology}>{technology}</span>)}
-              </div>
-              <a
-                className="text-link experience-company-link"
-                href={experience.website}
-                target="_blank"
-                rel="noreferrer"
+          {hasMoreDetails(experience) && (
+            <>
+              <button
+                className="experience-modal-trigger"
+                type="button"
+                onClick={() => openExperience(experience.id)}
               >
-                {isGerman ? "Website öffnen" : "Visit"} {experience.websiteLabel} <IoOpenOutline aria-hidden="true" />
-              </a>
-            </div>
-          </dialog>
+                {isGerman ? "Verantwortlichkeiten und Erfolge" : "Responsibilities and achievements"}
+              </button>
+
+              <dialog
+                id={`experience-dialog-${experience.id}`}
+                className="experience-dialog"
+                aria-labelledby={`experience-dialog-title-${experience.id}`}
+                onClick={(event) => {
+                  if (event.target === event.currentTarget) closeExperience(experience.id);
+                }}
+              >
+                <div className="experience-dialog-panel">
+                  <header className="experience-dialog-header">
+                    <div className="experience-head">
+                      {experience.logo && (
+                        <Image
+                          className="experience-logo"
+                          src={experience.logo}
+                          alt=""
+                          width={56}
+                          height={56}
+                          sizes="56px"
+                        />
+                      )}
+                      <div>
+                        <p className="section-kicker">{experience.period}</p>
+                        <h2 id={`experience-dialog-title-${experience.id}`}>
+                          {experience.company}
+                        </h2>
+                        <p className="meta">{experience.role} · {experience.location}</p>
+                      </div>
+                    </div>
+                    <button
+                      className="experience-dialog-close"
+                      type="button"
+                      aria-label={isGerman ? `Details zu ${experience.company} schließen` : `Close ${experience.company} details`}
+                      onClick={() => closeExperience(experience.id)}
+                    >
+                      <IoClose aria-hidden="true" />
+                    </button>
+                  </header>
+
+                  {experience.intro && <p className="experience-dialog-intro">{experience.intro}</p>}
+                  <ul className="detail-list experience-dialog-list">
+                    {experience.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                  <div
+                    className="tag-list"
+                    aria-label={isGerman ? `Technologien bei ${experience.company}` : `${experience.company} technologies`}
+                  >
+                    {experience.technologies.map((technology) => <span key={technology}>{technology}</span>)}
+                  </div>
+                  <a
+                    className="text-link experience-company-link"
+                    href={experience.website}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {isGerman ? "Website öffnen" : "Visit"} {experience.websiteLabel} <IoOpenOutline aria-hidden="true" />
+                  </a>
+                </div>
+              </dialog>
+            </>
+          )}
         </article>
       ))}
     </div>
