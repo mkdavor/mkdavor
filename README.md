@@ -6,30 +6,6 @@ Staff Software Engineer building scalable SaaS platforms, mobile apps, and cloud
 
 ## 🚀 What I’m working on
 
-### 🇩🇪 Deutschland Heute
-
-🌐 https://www.deutschlandheuteapp.de
-
-<a href="https://www.deutschlandheuteapp.de">
-  <img src="https://raw.githubusercontent.com/mkdavor/mkdavor/main/assets/deutschlandheute.png" width="120"/>
-</a>
-
-Native iPhone app for everyday life in Germany, live on the App Store
-
-- Public holidays, school breaks, and bridge days for all 16 federal states
-- Sun times, nearby fuel prices, quote of the day, and this day in history
-- Home-screen widgets
-- One-time Pro upgrade with no subscription
-
-**Tech**
-
-![iOS](https://img.shields.io/badge/iOS-Swift-black)
-![UI](https://img.shields.io/badge/UI-SwiftUI-blue)
-![Widgets](https://img.shields.io/badge/Widgets-WidgetKit-lightgrey)
-![Payments](https://img.shields.io/badge/IAP-StoreKit_2-orange)
-
----
-
 ### 🍅 TomatoCards (SaaS)
 
 🌐 https://tomatocards.com
@@ -71,6 +47,30 @@ Mobile app streaming 80+ Macedonian radio stations
 
 ![iOS](https://img.shields.io/badge/iOS-Swift-black)
 ![Android](https://img.shields.io/badge/Android-Kotlin-green)
+
+---
+
+### 🇩🇪 Deutschland Heute
+
+🌐 https://www.deutschlandheuteapp.de
+
+<a href="https://www.deutschlandheuteapp.de">
+  <img src="https://raw.githubusercontent.com/mkdavor/mkdavor/main/assets/deutschlandheute.png" width="120"/>
+</a>
+
+Native iPhone app for everyday life in Germany, live on the App Store
+
+- Public holidays, school breaks, and bridge days for all 16 federal states
+- Sun times, nearby fuel prices, quote of the day, and this day in history
+- Home-screen widgets
+- One-time Pro upgrade with no subscription
+
+**Tech**
+
+![iOS](https://img.shields.io/badge/iOS-Swift-black)
+![UI](https://img.shields.io/badge/UI-SwiftUI-blue)
+![Widgets](https://img.shields.io/badge/Widgets-WidgetKit-lightgrey)
+![Payments](https://img.shields.io/badge/IAP-StoreKit_2-orange)
 
 ---
 
